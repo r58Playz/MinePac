@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
+## ArthLeu
 Anythony Liu: ucinetid
 
-## USER 2
+## AvielMenter
 Aviel Menter: amenter
 
-## USER 3
+## KvnLXu
 Kevin Xu: ucinetid
