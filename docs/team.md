@@ -7,10 +7,10 @@ title:  Team
 
 
 ## USER 1
-***UCI Net ID***: ucinetid
+Anythony Liu: ucinetid
 
 ## USER 2
-***UCI Net ID***: ucinetid
+Aviel Menter: amenter
 
 ## USER 3
-***UCI Net ID***: ucinetid
+Kevin Xu: ucinetid
