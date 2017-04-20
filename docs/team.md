@@ -7,7 +7,7 @@ title:  Team
 
 
 ## ArthLeu
-Anythony Liu: haoyanl2
+Anthony Liu: haoyanl2
 
 ## AvielMenter
 Aviel Menter: amenter
