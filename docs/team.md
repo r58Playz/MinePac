@@ -7,10 +7,10 @@ title:  Team
 
 
 ## ArthLeu
-Anythony Liu: ucinetid
+Anythony Liu: haoyanl2
 
 ## AvielMenter
 Aviel Menter: amenter
 
 ## KvnLXu
-Kevin Xu: ucinetid
+Kevin Xu: <ucinetid>
