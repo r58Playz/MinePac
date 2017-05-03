@@ -39,7 +39,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
               <ServerSection>
                 <ServerInitialConditions>
                     <Time>
-                        <StartTime>6000</StartTime>
+                        <StartTime>20000</StartTime>
                         <AllowPassageOfTime>false</AllowPassageOfTime>
                     </Time>
                 </ServerInitialConditions>
@@ -47,50 +47,50 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                 <ServerHandlers>
                   <FlatWorldGenerator generatorString="3;7,44*49,73,35:1,159:4,95:13,35:13,159:11,95:10,159:14,159:6,35:6,95:6;35;village"/>
                   <DrawingDecorator>
-                      <DrawCuboid x1="0" x2="27" y1="55" y2="55" z1="-14" z2="16" type="diamond_block"/>
-                      <DrawCuboid x1="0" x2="0" y1="30" y2="55" z1="-14" z2="16" type="flowing_water"/>
-                      <DrawCuboid x1="27" x2="27" y1="30" y2="55" z1="-14" z2="16" type="flowing_water"/>
-                      <DrawCuboid x1="0" x2="27" y1="30" y2="55" z1="-14" z2="-14" type="flowing_water"/>
-                      <DrawCuboid x1="0" x2="27" y1="30" y2="55" z1="16" z2="16" type="flowing_water"/>
-                      <DrawBlock x="0" y="55" z="0" type="diamond_block"/>
-                      <DrawBlock x="27" y="55" z="0" type="diamond_block"/>
-                      <DrawCuboid x1="2" x2="5" y1="30" y2="55" z1="-10" z2="-12" type="flowing_water"/>
-                      <DrawCuboid x1="7" x2="11" y1="30" y2="55" z1="-10" z2="-12" type="flowing_water"/>
-                      <DrawCuboid x1="13" x2="14" y1="30" y2="55" z1="-10" z2="-13" type="flowing_water"/>
-                      <DrawCuboid x1="16" x2="20" y1="30" y2="55" z1="-10" z2="-12" type="flowing_water"/>
-                      <DrawCuboid x1="22" x2="25" y1="30" y2="55" z1="-10" z2="-12" type="flowing_water"/>
-                      <DrawCuboid x1="2" x2="5" y1="30" y2="55" z1="-7" z2="-8" type="flowing_water"/>
-                      <DrawCuboid x1="7" x2="8" y1="30" y2="55" z1="-1" z2="-8" type="flowing_water"/>
-                      <DrawCuboid x1="9" x2="11" y1="30" y2="55" z1="-4" z2="-5" type="flowing_water"/>
-                      <DrawCuboid x1="10" x2="17" y1="30" y2="55" z1="-7" z2="-8" type="flowing_water"/>
-                      <DrawCuboid x1="13" x2="14" y1="30" y2="55" z1="-4" z2="-6" type="flowing_water"/>
-                      <DrawCuboid x1="19" x2="20" y1="30" y2="55" z1="-1" z2="-8" type="flowing_water"/>
-                      <DrawCuboid x1="16" x2="18" y1="30" y2="55" z1="-4" z2="-5" type="flowing_water"/>
-                      <DrawCuboid x1="22" x2="25" y1="30" y2="55" z1="-7" z2="-8" type="flowing_water"/>
-                      <DrawCuboid x1="0" x2="5" y1="30" y2="55" z1="-1" z2="-5" type="flowing_water"/>
-                      <DrawCuboid x1="22" x2="26" y1="30" y2="55" z1="-1" z2="-5" type="flowing_water"/>
-                      <DrawCuboid x1="10" x2="17" y1="30" y2="55" z1="-2" z2="2" type="flowing_water"/>
-                      <DrawCuboid x1="0" x2="5" y1="30" y2="55" z1="1" z2="5" type="flowing_water"/>
-                      <DrawCuboid x1="22" x2="26" y1="30" y2="55" z1="1" z2="5" type="flowing_water"/>
-                      <DrawCuboid x1="7" x2="8" y1="30" y2="55" z1="1" z2="5" type="flowing_water"/>
-                      <DrawCuboid x1="19" x2="20" y1="30" y2="55" z1="1" z2="5" type="flowing_water"/>
-                      <DrawCuboid x1="10" x2="17" y1="30" y2="55" z1="4" z2="5" type="flowing_water"/>
-                      <DrawCuboid x1="13" x2="14" y1="30" y2="55" z1="6" z2="8" type="flowing_water"/>
-                      <DrawCuboid x1="2" x2="5" y1="30" y2="55" z1="7" z2="8" type="flowing_water"/>
-                      <DrawCuboid x1="4" x2="5" y1="30" y2="55" z1="9" z2="11" type="flowing_water"/>
-                      <DrawCuboid x1="22" x2="25" y1="30" y2="55" z1="7" z2="8" type="flowing_water"/>
-                      <DrawCuboid x1="22" x2="23" y1="30" y2="55" z1="9" z2="11" type="flowing_water"/>
-                      <DrawCuboid x1="1" x2="2" y1="30" y2="55" z1="10" z2="11" type="flowing_water"/>
-                      <DrawCuboid x1="25" x2="26" y1="30" y2="55" z1="10" z2="11" type="flowing_water"/>
-                      <DrawCuboid x1="2" x2="11" y1="30" y2="55" z1="13" z2="14" type="flowing_water"/>
-                      <DrawCuboid x1="7" x2="8" y1="30" y2="55" z1="10" z2="12" type="flowing_water"/>
-                      <DrawCuboid x1="16" x2="25" y1="30" y2="55" z1="13" z2="14" type="flowing_water"/>
-                      <DrawCuboid x1="19" x2="20" y1="30" y2="55" z1="10" z2="12" type="flowing_water"/>
-                      <DrawCuboid x1="2" x2="11" y1="30" y2="55" z1="13" z2="14" type="flowing_water"/>
-                      <DrawCuboid x1="7" x2="11" y1="30" y2="55" z1="7" z2="8" type="flowing_water"/>
-                      <DrawCuboid x1="16" x2="20" y1="30" y2="55" z1="7" z2="8" type="flowing_water"/>
-                      <DrawCuboid x1="10" x2="17" y1="30" y2="55" z1="10" z2="11" type="flowing_water"/>
-                      <DrawCuboid x1="13" x2="14" y1="30" y2="55" z1="11" z2="14" type="flowing_water"/>
+                      <DrawCuboid x1="0" x2="27" y1="55" y2="55" z1="-14" z2="16" type="glowstone"/>
+                      <DrawCuboid x1="0" x2="0" y1="30" y2="55" z1="-14" z2="16" type="air"/>
+                      <DrawCuboid x1="27" x2="27" y1="30" y2="55" z1="-14" z2="16" type="air"/>
+                      <DrawCuboid x1="0" x2="27" y1="30" y2="55" z1="-14" z2="-14" type="air"/>
+                      <DrawCuboid x1="0" x2="27" y1="30" y2="55" z1="16" z2="16" type="air"/>
+                      <DrawBlock x="0" y="55" z="0" type="glowstone"/>
+                      <DrawBlock x="27" y="55" z="0" type="glowstone"/>
+                      <DrawCuboid x1="2" x2="5" y1="30" y2="55" z1="-10" z2="-12" type="air"/>
+                      <DrawCuboid x1="7" x2="11" y1="30" y2="55" z1="-10" z2="-12" type="air"/>
+                      <DrawCuboid x1="13" x2="14" y1="30" y2="55" z1="-10" z2="-13" type="air"/>
+                      <DrawCuboid x1="16" x2="20" y1="30" y2="55" z1="-10" z2="-12" type="air"/>
+                      <DrawCuboid x1="22" x2="25" y1="30" y2="55" z1="-10" z2="-12" type="air"/>
+                      <DrawCuboid x1="2" x2="5" y1="30" y2="55" z1="-7" z2="-8" type="air"/>
+                      <DrawCuboid x1="7" x2="8" y1="30" y2="55" z1="-1" z2="-8" type="air"/>
+                      <DrawCuboid x1="9" x2="11" y1="30" y2="55" z1="-4" z2="-5" type="air"/>
+                      <DrawCuboid x1="10" x2="17" y1="30" y2="55" z1="-7" z2="-8" type="air"/>
+                      <DrawCuboid x1="13" x2="14" y1="30" y2="55" z1="-4" z2="-6" type="air"/>
+                      <DrawCuboid x1="19" x2="20" y1="30" y2="55" z1="-1" z2="-8" type="air"/>
+                      <DrawCuboid x1="16" x2="18" y1="30" y2="55" z1="-4" z2="-5" type="air"/>
+                      <DrawCuboid x1="22" x2="25" y1="30" y2="55" z1="-7" z2="-8" type="air"/>
+                      <DrawCuboid x1="0" x2="5" y1="30" y2="55" z1="-1" z2="-5" type="air"/>
+                      <DrawCuboid x1="22" x2="26" y1="30" y2="55" z1="-1" z2="-5" type="air"/>
+                      <DrawCuboid x1="10" x2="17" y1="30" y2="55" z1="-2" z2="2" type="air"/>
+                      <DrawCuboid x1="0" x2="5" y1="30" y2="55" z1="1" z2="5" type="air"/>
+                      <DrawCuboid x1="22" x2="26" y1="30" y2="55" z1="1" z2="5" type="air"/>
+                      <DrawCuboid x1="7" x2="8" y1="30" y2="55" z1="1" z2="5" type="air"/>
+                      <DrawCuboid x1="19" x2="20" y1="30" y2="55" z1="1" z2="5" type="air"/>
+                      <DrawCuboid x1="10" x2="17" y1="30" y2="55" z1="4" z2="5" type="air"/>
+                      <DrawCuboid x1="13" x2="14" y1="30" y2="55" z1="6" z2="8" type="air"/>
+                      <DrawCuboid x1="2" x2="5" y1="30" y2="55" z1="7" z2="8" type="air"/>
+                      <DrawCuboid x1="4" x2="5" y1="30" y2="55" z1="9" z2="11" type="air"/>
+                      <DrawCuboid x1="22" x2="25" y1="30" y2="55" z1="7" z2="8" type="air"/>
+                      <DrawCuboid x1="22" x2="23" y1="30" y2="55" z1="9" z2="11" type="air"/>
+                      <DrawCuboid x1="1" x2="2" y1="30" y2="55" z1="10" z2="11" type="air"/>
+                      <DrawCuboid x1="25" x2="26" y1="30" y2="55" z1="10" z2="11" type="air"/>
+                      <DrawCuboid x1="2" x2="11" y1="30" y2="55" z1="13" z2="14" type="air"/>
+                      <DrawCuboid x1="7" x2="8" y1="30" y2="55" z1="10" z2="12" type="air"/>
+                      <DrawCuboid x1="16" x2="25" y1="30" y2="55" z1="13" z2="14" type="air"/>
+                      <DrawCuboid x1="19" x2="20" y1="30" y2="55" z1="10" z2="12" type="air"/>
+                      <DrawCuboid x1="2" x2="11" y1="30" y2="55" z1="13" z2="14" type="air"/>
+                      <DrawCuboid x1="7" x2="11" y1="30" y2="55" z1="7" z2="8" type="air"/>
+                      <DrawCuboid x1="16" x2="20" y1="30" y2="55" z1="7" z2="8" type="air"/>
+                      <DrawCuboid x1="10" x2="17" y1="30" y2="55" z1="10" z2="11" type="air"/>
+                      <DrawCuboid x1="13" x2="14" y1="30" y2="55" z1="11" z2="14" type="air"/>
                   </DrawingDecorator>
                   <ServerQuitFromTimeUp timeLimitMs="30000"/>
                   <ServerQuitWhenAnyAgentFinishes/>
@@ -109,6 +109,7 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                 <AgentHandlers>
                   <ObservationFromFullStats/>
                   <ContinuousMovementCommands turnSpeedDegs="180"/>
+                  <ChatCommands/>
                 </AgentHandlers>
               </AgentSection>
             </Mission>'''
@@ -154,6 +155,9 @@ while not world_state.has_mission_begun:
 
 print
 print "Mission running ",
+
+#spawn mobs
+agent_host.sendCommand("chat /summon Zombie 24 56 0")
 
 # Loop until mission ends:
 while world_state.is_mission_running:
