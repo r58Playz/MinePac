@@ -23,6 +23,8 @@ import MalmoPython
 import os
 import sys
 import time
+import json
+import random
 
 sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)  # flush print output immediately
 
@@ -101,16 +103,61 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
               <AgentSection mode="Survival">
                 <Name>PacManBot</Name>
                 <AgentStart>
-                    <Placement x="0" y="56" z="0" yaw="-90"/>
+                    <Placement x="0.5" y="56" z="0.5" yaw="-90"/>
                 </AgentStart>
                 <AgentHandlers>
                   <DiscreteMovementCommands/>
-                  <ObservationFromFullStats/>
-                  <ContinuousMovementCommands turnSpeedDegs="180"/>
                   <ChatCommands/>
+                  <ObservationFromGrid>
+                      <Grid name="floorAll">
+                        <min x="-1" y="-1" z="-1"/>
+                        <max x="1" y="-1" z="1"/>
+                      </Grid>
+                  </ObservationFromGrid>
                 </AgentHandlers>
               </AgentSection>
             </Mission>'''
+
+
+def load_grid(world_state):
+    '''
+    loads floor grid
+    '''
+    while world_state.is_mission_running:
+        #sys.stdout.write(".")
+        time.sleep(0.1)
+        world_state = agent_host.getWorldState()
+        if len(world_state.errors) > 0:
+            raise AssertionError('Could not load grid.')
+
+        if world_state.number_of_observations_since_last_state > 0:
+            msg = world_state.observations[-1].text
+            observations = json.loads(msg)
+            grid = observations.get(u'floorAll', 0)
+            break
+    return grid
+
+def random_policy(grid):
+    '''
+    grid is
+        0 1 2
+        3 4 5
+        6 7 8
+    '''
+    actions_list = []
+    if(grid[1] == u'glowstone'):
+        actions_list.append('movenorth 1')
+    if(grid[3] == u'glowstone'):
+        actions_list.append('movewest 1')
+    if(grid[5] == u'glowstone'):
+        actions_list.append('moveeast 1')
+    if(grid[7] == u'glowstone'):
+        actions_list.append('movesouth 1')
+    
+    r = random.random()
+    a = random.randint(0, len(actions_list) - 1)
+    return actions_list[a]
+
 
 # Create default Malmo objects:
 
@@ -127,6 +174,9 @@ if agent_host.receivedArgument("help"):
 
 my_mission = MalmoPython.MissionSpec(missionXML, True)
 my_mission_record = MalmoPython.MissionRecordSpec()
+
+my_mission.requestVideo(800, 500)
+my_mission.setViewpoint(1)
 
 # Attempt to start a mission:
 max_retries = 3
@@ -145,7 +195,7 @@ for retry in range(max_retries):
 print "Waiting for the mission to start ",
 world_state = agent_host.getWorldState()
 while not world_state.has_mission_begun:
-    sys.stdout.write(".")
+    #sys.stdout.write(".")
     time.sleep(0.1)
     world_state = agent_host.getWorldState()
     for error in world_state.errors:
@@ -159,8 +209,17 @@ print "Mission running ",
 
 # Loop until mission ends:
 while world_state.is_mission_running:
-    sys.stdout.write(".")
+    #sys.stdout.write(".")
     time.sleep(0.1)
+
+    #agent performs movement action here
+    grid = load_grid(world_state)
+    action = random_policy(grid)
+    print
+    print action
+    agent_host.sendCommand(action)
+    time.sleep(0.5)
+    
     world_state = agent_host.getWorldState()
     for error in world_state.errors:
         print "Error:",error.text
