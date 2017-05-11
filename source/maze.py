@@ -137,6 +137,20 @@ def load_grid(world_state):
             break
     return grid
 
+def at_junction(grid):
+    '''
+    checks if agent is at a junction given the floor grid
+    '''
+    if(grid[1] == u'glowstone' or grid[7] == u'glowstone'):
+        return grid[3] == u'glowstone' or grid[5] == u'glowstone'
+    if(grid[3] == u'glowstone' or grid[5] == u'glowstone'):
+        return grid[1] == u'glowstone' or grid[7] == u'glowstone'
+
+    #this will probably never get called
+    #return true just to allow policy evaluation if it does get called
+    #may change this later
+    return true
+
 def random_policy(grid):
     '''
     grid is
@@ -207,6 +221,9 @@ print "Mission running ",
 #spawn mobs using chat command
 #agent_host.sendCommand("chat /summon Zombie 24 56 0")
 
+#initialize action
+action = ''
+
 # Loop until mission ends:
 while world_state.is_mission_running:
     #sys.stdout.write(".")
@@ -214,11 +231,13 @@ while world_state.is_mission_running:
 
     #agent performs movement action here
     grid = load_grid(world_state)
-    action = random_policy(grid)
+    if(action == '' or at_junction(grid)):
+        action = random_policy(grid)
     print
     print action
     agent_host.sendCommand(action)
-    time.sleep(0.5)
+    #the sleep time determines how fast the agent moves
+    time.sleep(0.3)
     
     world_state = agent_host.getWorldState()
     for error in world_state.errors:
