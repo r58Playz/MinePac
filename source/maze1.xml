@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<About>
+		<Summary>Hello world!</Summary>
+	</About>
+
+	<ServerSection>
+		<ServerInitialConditions>
+			<Time>
+				<StartTime>20000</StartTime>
+				<AllowPassageOfTime>false</AllowPassageOfTime>
+			</Time>
+		</ServerInitialConditions>
+
+		<ServerHandlers>
+			<FlatWorldGenerator generatorString="3;7,44*49,73,35:1,159:4,95:13,35:13,159:11,95:10,159:14,159:6,35:6,95:6;35;village"/>
+			<DrawingDecorator>
+				<DrawCuboid x1="0" x2="27" y1="55" y2="55" z1="-14" z2="16" type="glowstone"/>
+				<DrawCuboid x1="0" x2="0" y1="55" y2="55" z1="-14" z2="16" type="air"/>
+				<DrawCuboid x1="27" x2="27" y1="55" y2="55" z1="-14" z2="16" type="air"/>
+				<DrawCuboid x1="0" x2="27" y1="55" y2="55" z1="-14" z2="-14" type="air"/>
+				<DrawCuboid x1="0" x2="27" y1="55" y2="55" z1="16" z2="16" type="air"/>
+				<DrawBlock x="0" y="55" z="0" type="glowstone"/>
+				<DrawBlock x="27" y="55" z="0" type="glowstone"/>
+				<DrawCuboid x1="2" x2="5" y1="55" y2="55" z1="-10" z2="-12" type="air"/>
+				<DrawCuboid x1="7" x2="11" y1="55" y2="55" z1="-10" z2="-12" type="air"/>
+				<DrawCuboid x1="13" x2="14" y1="55" y2="55" z1="-10" z2="-13" type="air"/>
+				<DrawCuboid x1="16" x2="20" y1="55" y2="55" z1="-10" z2="-12" type="air"/>
+				<DrawCuboid x1="22" x2="25" y1="55" y2="55" z1="-10" z2="-12" type="air"/>
+				<DrawCuboid x1="2" x2="5" y1="55" y2="55" z1="-7" z2="-8" type="air"/>
+				<DrawCuboid x1="7" x2="8" y1="55" y2="55" z1="-1" z2="-8" type="air"/>
+				<DrawCuboid x1="9" x2="11" y1="55" y2="55" z1="-4" z2="-5" type="air"/>
+				<DrawCuboid x1="10" x2="17" y1="55" y2="55" z1="-7" z2="-8" type="air"/>
+				<DrawCuboid x1="13" x2="14" y1="55" y2="55" z1="-4" z2="-6" type="air"/>
+				<DrawCuboid x1="19" x2="20" y1="55" y2="55" z1="-1" z2="-8" type="air"/>
+				<DrawCuboid x1="16" x2="18" y1="55" y2="55" z1="-4" z2="-5" type="air"/>
+				<DrawCuboid x1="22" x2="25" y1="55" y2="55" z1="-7" z2="-8" type="air"/>
+				<DrawCuboid x1="0" x2="5" y1="55" y2="55" z1="-1" z2="-5" type="air"/>
+				<DrawCuboid x1="22" x2="26" y1="55" y2="55" z1="-1" z2="-5" type="air"/>
+				<DrawCuboid x1="10" x2="17" y1="55" y2="55" z1="-2" z2="2" type="air"/>
+				<DrawCuboid x1="0" x2="5" y1="55" y2="55" z1="1" z2="5" type="air"/>
+				<DrawCuboid x1="22" x2="26" y1="55" y2="55" z1="1" z2="5" type="air"/>
+				<DrawCuboid x1="7" x2="8" y1="55" y2="55" z1="1" z2="5" type="air"/>
+				<DrawCuboid x1="19" x2="20" y1="55" y2="55" z1="1" z2="5" type="air"/>
+				<DrawCuboid x1="10" x2="17" y1="55" y2="55" z1="4" z2="5" type="air"/>
+				<DrawCuboid x1="13" x2="14" y1="55" y2="55" z1="6" z2="8" type="air"/>
+				<DrawCuboid x1="2" x2="5" y1="55" y2="55" z1="7" z2="8" type="air"/>
+				<DrawCuboid x1="4" x2="5" y1="55" y2="55" z1="9" z2="11" type="air"/>
+				<DrawCuboid x1="22" x2="25" y1="55" y2="55" z1="7" z2="8" type="air"/>
+				<DrawCuboid x1="22" x2="23" y1="55" y2="55" z1="9" z2="11" type="air"/>
+				<DrawCuboid x1="1" x2="2" y1="55" y2="55" z1="10" z2="11" type="air"/>
+				<DrawCuboid x1="25" x2="26" y1="55" y2="55" z1="10" z2="11" type="air"/>
+				<DrawCuboid x1="2" x2="11" y1="55" y2="55" z1="13" z2="14" type="air"/>
+				<DrawCuboid x1="7" x2="8" y1="55" y2="55" z1="10" z2="12" type="air"/>
+				<DrawCuboid x1="16" x2="25" y1="55" y2="55" z1="13" z2="14" type="air"/>
+				<DrawCuboid x1="19" x2="20" y1="55" y2="55" z1="10" z2="12" type="air"/>
+				<DrawCuboid x1="2" x2="11" y1="55" y2="55" z1="13" z2="14" type="air"/>
+				<DrawCuboid x1="7" x2="11" y1="55" y2="55" z1="7" z2="8" type="air"/>
+				<DrawCuboid x1="16" x2="20" y1="55" y2="55" z1="7" z2="8" type="air"/>
+				<DrawCuboid x1="10" x2="17" y1="55" y2="55" z1="10" z2="11" type="air"/>
+				<DrawCuboid x1="13" x2="14" y1="55" y2="55" z1="11" z2="14" type="air"/>
+				<DrawCuboid x1="0" x2="27" y1="54" y2="54" z1="-14" z2="16" type="lava"/>
+			</DrawingDecorator>
+			<ServerQuitFromTimeUp timeLimitMs="30000"/>
+			<ServerQuitWhenAnyAgentFinishes/>
+		</ServerHandlers>
+	</ServerSection>
+
+	<AgentSection mode="Survival">
+		<Name>PacManBot</Name>
+		<AgentStart>
+			<Placement x="0.5" y="56" z="0.5" yaw="-90"/>
+		</AgentStart>
+		<AgentHandlers>
+			<DiscreteMovementCommands/>
+			<ChatCommands/>
+			<ObservationFromGrid>
+				<Grid name="floorAll">
+					<min x="-1" y="-1" z="-1"/>
+					<max x="1" y="-1" z="1"/>
+				</Grid>
+			</ObservationFromGrid>
+			<ObservationFromDistance>
+				<Marker x="13.5" y="56" z="-14" name="Top" />
+				<Marker x="27" y="56" z="1" name="Right" />
+				<Marker x="13.5" y="56" z="16" name="Bottom" />
+				<Marker x="0" y="56" z="1" name="Left" />
+			</ObservationFromDistance>
+			<ObservationFromDiscreteCell />
+		</AgentHandlers>
+	</AgentSection>
+</Mission>
