@@ -125,6 +125,15 @@ class mission:
                                 cell = state.get(u'cell', 0)
                         
                                 self.agent_location = cell
+                                
+
+                                ###testing entity observation
+                                ec = state.get(u'entityCoordinates', 0)
+                                for e in ec:
+                                        if e[u'name'] != u'PacManBot':
+                                                print e
+                                ################################
+                                
                                 break
                                 
                 return observation(grid, distances, cell)
