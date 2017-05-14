@@ -7,10 +7,11 @@ import random
 import math
 
 class observation:
-	def __init__(self, set_grid, set_edge_distances, set_cell):
+	def __init__(self, set_grid, set_edge_distances, set_cell, set_entity_locations):
 		self.grid = set_grid
 		self.edge_distances = set_edge_distances
 		self.agent_cell = set_cell
+		self.entity_locations = set_entity_locations
 		
 	def at_junction(self):
 		'''
@@ -28,14 +29,17 @@ class observation:
 	
 
 class mission:
-	def __init__(self):
+	def __init__(self, num_items = 1, num_enemies = 1):
 		self.missionXML = ""
 		self.agent_host = None
 		self.malmo_mission = None
 		self.malmo_mission_record = None
 		self.world_state = None
 		
+		self.number = 0
+		
 		self.agent_location = (None, None)
+		self.num_items = 0
 		self.blocks_traveled = {} # dictionary mapping an (x,z) coordinate to the number of times the agent has been there
 
 	def load(self, mission_file):
@@ -62,13 +66,15 @@ class mission:
 			
 	def start(self):
 		self.malmo_mission = MalmoPython.MissionSpec(self.missionXML, True)
+		self.malmo_mission.forceWorldReset()
+		
 		self.malmo_mission_record = MalmoPython.MissionRecordSpec()
 
 		self.malmo_mission.requestVideo(800, 500)
 		self.malmo_mission.setViewpoint(1)
 
 		# Attempt to start a mission:
-		max_retries = 3
+		max_retries = 10
 		for retry in range(max_retries):
 			try:
 				self.agent_host.startMission(self.malmo_mission, self.malmo_mission_record )
@@ -83,17 +89,21 @@ class mission:
 		# Loop until mission starts:
 		print "Waiting for the mission to start ",
 		self.world_state = self.agent_host.getWorldState()
+		
 		while not self.world_state.has_mission_begun:
-			#sys.stdout.write(".")
-			time.sleep(0.1)
+			sys.stdout.write(".")
+			time.sleep(0.5)
 			self.world_state = self.agent_host.getWorldState()
 			for error in self.world_state.errors:
 				print "Error:",error.text
 
 		print
 		print "Mission running ",
+		self.number += 1
 		
 	def is_running(self):
+		if self.world_state == None:
+			return False
 		return self.world_state.is_mission_running
 		
 	def get_observation(self):
@@ -115,17 +125,19 @@ class mission:
 				grid = state.get(u'floorAll', 0)
 				distances = [state.get(u'distanceFrom' + e, 0) for e in edges]
 				cell = state.get(u'cell', 0)
+				el = state.get(u'entityCoordinates', 0)
 			
 				self.agent_location = cell
+				self.num_items = sum([state.get("Hotbar_" + str(i) + "_size", 0) for i in range(9)])
 				break
 				
-		return observation(grid, distances, cell)
+		return observation(grid, distances, cell, el)
 		
 	def send_command(self, cmd):
 		if self.agent_location not in self.blocks_traveled:
 			self.blocks_traveled[self.agent_location] = 0
 		self.blocks_traveled[self.agent_location] += 1
-		print ("Agent traveled at location " + str(self.agent_location))
+		
 		self.agent_host.sendCommand(cmd)
 		
 	def check_errors(self):
@@ -139,3 +151,6 @@ class mission:
 			score += math.log(self.blocks_traveled[location] + 1, 2) # diminishing returns for being at the same block
 			
 		return score
+		
+	def item_score(self):
+		return self.num_items
