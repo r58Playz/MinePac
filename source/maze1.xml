@@ -88,6 +88,9 @@
 				<Marker x="0" y="56" z="1" name="Left" />
 			</ObservationFromDistance>
 			<ObservationFromDiscreteCell />
+			<ObservationFromNearbyEntities>
+				<Range name="entityCoordinates" xrange="10" yrange="3" zrange="10"/>
+			</ObservationFromNearbyEntities>
 		</AgentHandlers>
 	</AgentSection>
 </Mission>
