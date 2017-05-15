@@ -17,6 +17,19 @@ class observation:
 		'''
 		checks if agent is at a junction given the floor grid
 		'''
+
+                actions_list = []
+                if(self.grid[1] == u'glowstone'):
+                        actions_list.append('movenorth 1')
+                if(self.grid[3] == u'glowstone'):
+                        actions_list.append('movewest 1')
+                if(self.grid[5] == u'glowstone'):
+                        actions_list.append('moveeast 1')
+                if(self.grid[7] == u'glowstone'):
+                        actions_list.append('movesouth 1')
+                if len(actions_list) == 1:
+                        return True
+                
 		if(self.grid[1] == u'glowstone' or self.grid[7] == u'glowstone'):
 			return self.grid[3] == u'glowstone' or self.grid[5] == u'glowstone'
 		if(self.grid[3] == u'glowstone' or self.grid[5] == u'glowstone'):
