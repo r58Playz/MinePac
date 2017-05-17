@@ -5,16 +5,15 @@ import time
 import json
 import random
 
-from genetic import genetic
-from hillclimbing import climber
 from mission import mission
 
+import algorithm
 import heuristics as h
 
 m = mission()
 m.load(sys.argv[1])
 
-g = genetic([h.away_from_enemy, h.towards_item, h.random_direction])
+g = algorithm.get([h.away_from_enemy, h.towards_item, h.random_direction])
 
 while True:		
 	m.start()
@@ -44,8 +43,8 @@ while True:
 		
 
 	print
-	print ("Mission ended with score: " + str(m.item_score()))
-	g.set_score(m.item_score())
+	print ("Mission ended with score: " + str(m.score()))
+	g.set_score(m.score())
 	
 	m.send_command("chat /clear")
 	m.send_command("chat /kill @e[type=Player]")
