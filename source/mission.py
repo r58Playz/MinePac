@@ -56,6 +56,7 @@ class mission:
 		self.blocks_traveled = {} # dictionary mapping an (x,z) coordinate to the number of times the agent has been there
 		
 		self.start_time = None
+		self.end_time = None
 
 	def load(self, mission_file):
 		sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)  # flush print output immediately
@@ -117,6 +118,7 @@ class mission:
 		
 		self.number += 1
 		self.start_time = time.time()
+		self.end_time = None
 		
 	def is_running(self):
 		if self.world_state == None:
@@ -157,6 +159,9 @@ class mission:
 		
 		self.agent_host.sendCommand(cmd)
 		
+	def stop_clock(self):
+		self.end_time = time.time()
+		
 	def check_errors(self):
 		self.world_state = self.agent_host.getWorldState()
 		for error in self.world_state.errors:
@@ -172,7 +177,10 @@ class mission:
 	def time_score(self):
 		if self.start_time == None:
 			return 0
-		return time.time() - self.start_time
+		if self.end_time == None:
+			self.end_time = time.time()
+			
+		return self.end_time - self.start_time
 		
 	def item_score(self):
 		return self.num_items

@@ -39,9 +39,11 @@ while True:
 		print ("ERROR: " + str(e))
 		
 		m.send_command("quit")
+		m.stop_clock()
 		m.check_errors()
 		
-
+	m.stop_clock()
+	
 	print
 	print ("Mission ended with score: " + str(m.score()))
 	g.set_score(m.score())
