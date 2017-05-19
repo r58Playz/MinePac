@@ -8,7 +8,7 @@ This program teaches a Minecraft agent to explore and survive in a contained but
 Essentially, this program teaches an agent to play Pacman.
 
 
-<img src="media/pacman_comparison.png" alt="Pacman Comparison" style="display: block; text-align: center; margin-left: auto; margin-right: auto; height: 250px;" />
+<img src="media/pacman_comparison.png" alt="Pacman Comparison" style="display: block; text-align: center; margin-left: auto; margin-right: auto; height: 325px;" />
 
 
 The agent will be taught using various different local search algorithms, and we will then compare the performance of each algorithm. So far, the agent can learn to navigate its environment using either a [genetic algorithm](https://en.wikipedia.org/wiki/Genetic_algorithm) or a [hillclimbing algorithm](https://en.wikipedia.org/wiki/Hill_climbing). You can see a video of the program in action below.
