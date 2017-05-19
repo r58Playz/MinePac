@@ -12,8 +12,11 @@ import heuristics as h
 if __name__ == "__main__":
 	m = mission()
 	m.load(sys.argv[1])
-	g = algorithm.get([h.away_from_enemy, h.towards_item, h.random_direction])
-
+	heur_list = [h.away_from_enemy, h.towards_item, h.random_direction]
+	g = algorithm.get("genetic", heur_list)
+	## h = algorithm.get("hillclimb", heur_list)
+	## need a method to incorporate all the algorithms (i.e. for alg in alg_list: try)
+	
 	while True:		
 		m.start()
 		#initialize action
