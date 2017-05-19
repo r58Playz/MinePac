@@ -22,5 +22,12 @@ get_action:
 		an action string that can be send to the agent
 '''
 
-def get(heuristics_list):
-	return genetic(heuristics_list)
+def get(alg_selected, heuristics_list):
+	if alg_selected == "genetic":
+		return genetic(heuristics_list)
+	elif alg_selected == "hillclimb":
+		return climber(heuristics_list)
+	elif alg_selected == "mcts":
+		pass
+	else: pass
+		
