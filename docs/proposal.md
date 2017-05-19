@@ -19,3 +19,5 @@ Ideally, each algorithm should produce a sequence of movement commands that caus
 
 ## Appointment
 An appointment has been scheduled for May 1st at 3:15pm.
+
+**Note:** This proposal is preliminary. Details may be subject to change as the project progresses.
