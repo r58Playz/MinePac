@@ -15,4 +15,4 @@ The agent will be taught using various different local search algorithms, and we
 * **Repository:** <https://github.com/avielmenter/Minecraft-Project>
 * **Malmo Platform:** <https://github.com/Microsoft/malmo>
 
-###Video Placeholder
+### Video Placeholder
