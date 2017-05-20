@@ -7,11 +7,11 @@ def algorithmsList():
     valid = algorithm.valid_algorithms()
     maxNameLength = 0
     for alg in valid:
-        if len(alg) + 2 > maxNameLength: #extra 2 chars for algorithm name + ": "
-            maxNameLength = len(alg) + 2
+        if len(alg) + 3 > maxNameLength: #extra 3 spaces of padding
+            maxNameLength = len(alg) + 3
 
     for alg in valid:
-        l += ("    " + (alg + ": ").ljust(maxNameLength) + valid[alg] + "\n")
+        l += ("  " + alg.ljust(maxNameLength) + valid[alg] + "\n")
 
     return l
 
