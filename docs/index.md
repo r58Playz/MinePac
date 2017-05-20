@@ -14,7 +14,7 @@ Essentially, this program teaches an agent to play Pacman.
 The agent will be taught using various different local search algorithms, and we will then compare the performance of each algorithm. So far, the agent can learn to navigate its environment using either a [genetic algorithm](https://en.wikipedia.org/wiki/Genetic_algorithm) or a [hillclimbing algorithm](https://en.wikipedia.org/wiki/Hill_climbing). You can see a video of the program in action below.
 
 ### Useful Links
-* **Repository:** <https://github.com/avielmenter/Minecraft-Project>
+* **Repository:** <https://github.com/avielmenter/MinePac>
 * **Malmo Platform:** <https://github.com/Microsoft/malmo>
 
 ### Video Placeholder

@@ -11,4 +11,4 @@ To use this program, download the `source` folder and run the `maze.py` file usi
 
 ## Website
 
-For a more detailed explanation of the program, please visit the [project website](https://avielmenter.github.io/Minecraft-Project/index.html).
+For a more detailed explanation of the program, please visit the [project website](https://avielmenter.github.io/MinePac/index.html).
