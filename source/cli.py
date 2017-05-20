@@ -1,6 +1,8 @@
 import algorithm
 import argparse
 
+import time
+
 def algorithmsList():
     l = "available algorithms:\n"
 
@@ -24,9 +26,15 @@ def parseArgs():
 
     parser.add_argument("maze", help="specifies the maze XML file")
     parser.add_argument("algorithm", help="specifies the name of the algorithm")
+    # parser.add_argument("-f", "--file", type=str, help="specifies the name of the output log file (named with the timestamp by default)") # optional arguments not working for some reason
 
     args = parser.parse_args()
-    maze, alg = args.maze, algorithm.get(args.algorithm)
+    maze = args.maze
+    alg = algorithm.get(args.algorithm)
+    #if not args.file:
+    out_file = "log_" + args.algorithm + "_" + str(time.time()) + ".csv"
+    #else:
+    #    out_file = args.file
 
     if alg == None:
         print "ERROR: You must specify a valid algorithm."
@@ -34,4 +42,4 @@ def parseArgs():
 
         exit(1)
 
-    return maze, alg
+    return maze, alg, out_file

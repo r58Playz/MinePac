@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import MalmoPython
 import time
 
@@ -5,9 +7,9 @@ import cli
 from mission import mission
 
 if __name__ == "__main__":
-	mazeXMLFile, a = cli.parseArgs()
+	mazeXMLFile, a, out = cli.parseArgs()
 
-	m = mission()
+	m = mission(out)
 	m.load(mazeXMLFile)
 
 	## need a method to incorporate all the algorithms (i.e. for alg in alg_list: try)
@@ -29,17 +31,18 @@ if __name__ == "__main__":
 				m.check_errors()
 
 				time.sleep(0.1)
-				
+
 		except Exception as e:
-			print ("ERROR: " + str(e))
+			# print ("ERROR: " + str(e)) prints after every mission. suppressing.
 			m.send_command("quit")
 			m.stop_clock()
 			m.check_errors()
 
 		m.stop_clock()
+		s = m.score(record = True)
 
-		print ("\nMission ended with score: " + str(m.score()))
-		a.set_score(m.score())
+		print ("\nMission ended with score: " + str(s))
+		a.set_score(s)
 
 		m.send_command("chat /clear")
 		m.send_command("chat /kill @e[type=Player]")

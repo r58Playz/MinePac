@@ -1,2 +1,6 @@
 # ignore compiled files
 *.pyc
+
+#ignore log files
+log_*
+*.csv

@@ -1,11 +1,12 @@
 import random
 
 class genetic:
-	def __init__(self, set_actions, set_gen_size = 20, set_str_len = 5, set_sel_frac = .25):
+	def __init__(self, set_actions, set_gen_size = 20, set_str_len = 8, set_sel_frac = .25, set_mut_prob = .05):
 		self.possible_actions = set_actions
 		self.generation_size = set_gen_size
 		self.str_len = set_str_len
 		self.selection_fraction = int(set_sel_frac * self.generation_size)
+		self.mutation_probability = set_mut_prob
 
 		self.iteration = 0
 		self.move = 0
@@ -68,6 +69,11 @@ class genetic:
 			second_crossover = int(crossover * (len(second_parent) - 1))
 
 			child = first_parent[:first_crossover] + second_parent[second_crossover:]
+			for i, action in enumerate(child): # small chance that the string will mutate
+				will_mutate = random.random()
+				if will_mutate < self.mutation_probability:
+					child[i] = random.choice(self.possible_actions)
+
 			new_population.append(child)
 
 		self.population = new_population
