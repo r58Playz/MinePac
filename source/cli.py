@@ -32,7 +32,7 @@ def parseArgs():
     maze = args.maze
     alg = algorithm.get(args.algorithm)
     #if not args.file:
-    out_file = "log_" + args.algorithm + "_" + str(time.time()) + ".csv"
+    out_file = "logs/log_" + args.algorithm + "_" + str(time.time()) + ".csv"
     #else:
     #    out_file = args.file
 
