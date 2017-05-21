@@ -1,6 +1,6 @@
 from algorithms.genetic import genetic
 from algorithms.hillclimbing import climber
-from algorithms.annealing import annealing
+#from algorithms.annealing import annealing
 
 import heuristics as h
 
@@ -29,9 +29,9 @@ def get(alg_selected):
 	if alg_selected == "genetic":
 		return genetic([h.towards_item, h.away_from_enemy, h.random_direction])
 	elif alg_selected == "hillclimb" or alg_selected == "hilclimbing":
-		return climber([h.towards_item, h.away_from_enemy, h.random_direction])
+		return climber([h.towards_item, h.away_from_enemy])#, h.random_direction])
 	elif alg_selected == "annealing" or alg_selected == "anneal":
-		return annealing([h.towards_item, h.away_from_enemy, h.random_direction])
+		return climber([h.towards_item, h.away_from_enemy], 1.0, 0.5)#, h.random_direction])
 	elif alg_selected == "mcts":
 		pass
 	else: pass
