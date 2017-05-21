@@ -3,11 +3,11 @@
 import MalmoPython
 import time
 
-import cli
+from cli import parse_args
 from mission import mission
 
 if __name__ == "__main__":
-	mazeXMLFile, a, out = cli.parseArgs()
+	mazeXMLFile, a, out = parse_args()
 
 	m = mission(out)
 	m.load(mazeXMLFile)

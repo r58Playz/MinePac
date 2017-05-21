@@ -1,7 +1,11 @@
 import random
 
-class climber(object):
+from algorithm import algorithm
+
+class climber(algorithm):
 	def __init__(self, set_actions, init_eps = 0.0, set_cooling = 1.0, init_str = []):
+		super(climber, self).__init__(set_actions)
+
 		self.h_str = [random.choice(set_actions)]
 		self.possible_actions = set_actions
 

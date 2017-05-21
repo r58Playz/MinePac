@@ -1,8 +1,11 @@
 import random
 
-class genetic:
+from algorithm import algorithm
+
+class genetic(algorithm):
 	def __init__(self, set_actions, set_gen_size = 20, set_str_len = 8, set_sel_frac = .25, set_mut_prob = .05):
-		self.possible_actions = set_actions
+		super(genetic, self).__init__(set_actions)
+
 		self.generation_size = set_gen_size
 		self.str_len = set_str_len
 		self.selection_fraction = int(set_sel_frac * self.generation_size)
