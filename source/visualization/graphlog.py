@@ -30,4 +30,6 @@ if __name__ == "__main__": # arg pattern goes [cutoff] [file1] [rolling average 
     for i in range(2, len(sys.argv), 3):
         graph_csv(sys.argv[i], int(sys.argv[i + 1]), cutoff, sys.argv[i + 2])
 
+    plt.ylabel("score")
+    plt.xlabel("mission")
     plt.show()
