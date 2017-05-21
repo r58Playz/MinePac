@@ -2,6 +2,7 @@ import algorithm
 import argparse
 
 import time
+import os
 
 def algorithmsList():
     l = "available algorithms:\n"
@@ -33,6 +34,8 @@ def parseArgs():
     alg = algorithm.get(args.algorithm)
     #if not args.file:
     out_file = "logs/log_" + args.algorithm + "_" + str(time.time()) + ".csv"
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
     #else:
     #    out_file = args.file
 
