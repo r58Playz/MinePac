@@ -1,5 +1,5 @@
-from genetic import genetic
-from hillclimbing import climber
+from algorithms.genetic import genetic
+from algorithms.hillclimbing import climber
 
 import heuristics as h
 
