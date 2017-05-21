@@ -56,6 +56,8 @@ class climber(object):
 			print ("Best neighbor's score: " + str(best_score))
 
 		self.h_str = best_neighbor
+		self.neighbor_scores = []
+
 		self.local_space = self.generate_local_space()
 
 	def set_score(self, score):
@@ -68,7 +70,6 @@ class climber(object):
 		if self.space_index >= len(self.local_space): # if we have searched all neighbors
 			self.pick_next_string()
 
-	# weighted choice algorithm from http://stackoverflow.com/questions/3679694/a-weighted-version-of-random-choice
 	def get_action(self, obs):
 		curr_str = self.local_space[self.space_index]
 		a = curr_str[self.move % len(curr_str)]
