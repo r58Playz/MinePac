@@ -191,6 +191,6 @@ class mission:
 
 		if record:
 			with open(self.record_file, "a+") as log:
-				log.write(str(s) + ",\n")
+				log.write(str(s) + "\n")
 
 		return s

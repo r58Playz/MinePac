@@ -4,3 +4,6 @@
 #ignore log files
 log_*
 *.csv
+
+#ignore Mac OS files
+.DS_Store
