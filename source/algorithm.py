@@ -1,5 +1,6 @@
 from algorithms.genetic import genetic
 from algorithms.hillclimbing import climber
+from algorithms.annealing import annealing
 
 import heuristics as h
 
@@ -27,8 +28,10 @@ get_action:
 def get(alg_selected):
 	if alg_selected == "genetic":
 		return genetic([h.towards_item, h.away_from_enemy, h.random_direction])
-	elif alg_selected == "hillclimb":
+	elif alg_selected == "hillclimb" or alg_selected == "hilclimbing":
 		return climber([h.towards_item, h.away_from_enemy, h.random_direction])
+	elif alg_selected == "annealing" or alg_selected == "anneal":
+		return annealing([h.towards_item, h.away_from_enemy, h.random_direction])
 	elif alg_selected == "mcts":
 		pass
 	else: pass
@@ -38,5 +41,6 @@ def get(alg_selected):
 def valid_algorithms(): # dictionary in format 'algorithm name': 'algorithm description'
 	return {
 				"genetic": "genetic algorithm operating on strings of movement heuristics",
-	 			"hillclimb": "hillclimbing algorithm operating on probabilities of using a heuristic"
+	 			"hillclimb": "hillclimbing algorithm operating on weighted probabilities of using a heuristic",
+				"annealing": "same as the hillclimbing algorithm, but with simulated annealing"
 			}
