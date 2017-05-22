@@ -48,7 +48,7 @@ Because the genetic and hill-climbing algorithms can identify this sequence as o
 
 <img src="media/performance_graph.png" alt="Performance Comparison" style="display: block; margin-left: auto; margin-right: auto; height: 325px;" />
 <div style="text-align: center; font-style: italic; margin-left: 2in; margin-right: 2in;">
-  The <span style="color: #F00;">red</span> line tracks the performance of the <span style="color: #F00;">genetic</span> algorithm, the <span style="color: #0F0;">green</span> line tracks the performance of the <span style="color: #0F0;">hill-climbing</span> algorithm, and the <span style="color: #00F;">blue</span> line tracks the performance of the <span style="color: #00F;">baseline</span> degenerate algorithm.<br />
+  The <span style="color: #F00;">red</span> line tracks the performance of the <span style="color: #F00;">genetic</span> algorithm, the <span style="color: #0F0;">green</span> line tracks the performance of the <span style="color: #0F0;">hill-climbing</span> algorithm, and the <span style="color: #00F;">blue</span> line tracks the performance of the <span style="color: #00F;">baseline</span> degenerate algorithm.<br /><br />
 </div>
 
 Indeed, if we compare the means and standard deviations of the scores of the different algorithms, we see that though the genetic and hill-climbing algorithms have a slightly lower average than our simple baseline algorithm, their standard deviation (and therefore peak performance levels) are higher.
