@@ -47,9 +47,9 @@ Both the hill-climbing and genetic algorithms converge to similar solutions. Thi
 Because the genetic and hill-climbing algorithms can identify this sequence as optimal, they can achieve higher peak performance than an algorithm that just mindlessly moves towards the nearest diamond at all times. A degenerate algorithm like that has no way of exceeding a score of around 50, because it will always be immediately killed by the Zombie after capturing the first diamond. However, both the genetic and hill-climbing algorithms spend much of their time exploring suboptimal sequences. This means that, although they achieve higher peak performance their average performance is not substantially improved over the performance of a degenerate algorithm.
 
 <img src="media/performance_graph.png" alt="Performance Comparison" style="display: block; margin-left: auto; margin-right: auto; height: 325px;" />
-<span style="text-align: center; font-style: italic;">
+<div style="text-align: center; font-style: italic; margin-left: 2in; margin-right: 2in;">
   The <span style="color: #F00;">red</span> line tracks the performance of the <span style="color: #F00;">genetic</span> algorithm, the <span style="color: #0F0;">green</span> line tracks the performance of the <span style="color: #0F0;">hill-climbing</span> algorithm, and the <span style="color: #00F;">blue</span> line tracks the performance of the <span style="color: #00F;">degenerate</span> algorithm.
-</span>
+</div>
 
 As we test the algorithm in more and more complex environments, average performance differences should become more stark. A simple algorithm will likely be unable to achieve reasonable performance in a complex environment. Furthermore, while currently heuristic strings that are only slightly suboptimal have near-random performance, in a more complex environment with longer heuristic strings, a slightly suboptimal string will likely have much better than random performance. As the project progresses, we will therefore have more insightful comparative data with which we can analyze these algorithms.
 
