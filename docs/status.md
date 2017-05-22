@@ -46,7 +46,7 @@ Both the hill-climbing and genetic algorithms converge to similar solutions. Thi
 
 Because the genetic and hill-climbing algorithms can identify this sequence as optimal, they can achieve higher peak performance than an algorithm that just mindlessly moves towards the nearest diamond at all times. A degenerate algorithm like that has no way of exceeding a score of around 50, because it will always be immediately killed by the Zombie after capturing the first diamond. However, both the genetic and hill-climbing algorithms spend much of their time exploring suboptimal sequences. This means that, although they achieve higher peak performance their average performance is not substantially improved over the performance of a degenerate algorithm.
 
-<img src="media/performance_graph.png" alt="Performance Comparison" style="display: block; margin-left: auto; margin-right: auto;" />
+<img src="media/performance_graph.png" alt="Performance Comparison" style="display: block; margin-left: auto; margin-right: auto; height: 325px;" />
 <span style="text-align: center; font-style: italic;">
   The <span style="color: #F00;">red</span> line tracks the performance of the <span style="color: #F00;">genetic</span> algorithm, the <span style="color: #0F0;">green</span> line tracks the performance of the <span style="color: #0F0;">hill-climbing</span> algorithm, and the <span style="color: #00F;">blue</span> line tracks the performance of the <span style="color: #00F;">degenerate</span> algorithm.
 </span>
