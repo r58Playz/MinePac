@@ -38,18 +38,44 @@ Like the genetic algorithm, the hill-climbing algorithm operates on a string of 
 After this first string has been scored, the algorithm then runs a mission for each string adjacent to the string in the search space. An adjacent string is a string differing by only one addition of a heuristic from the string, removal of a heuristic, or change of a heuristic. After scoring every adjacent string, the algorithm chooses the string with the best score. It then explores the adjacent strings to that string, choosing the best one of those, and so on. These incremental improvements allow the algorithm to find heuristic strings that produce higher and higher scores.
 
 ## Evaluation
-As the goal of this project is to provide comparative data about different local search algorithms, the project should be evaluated based on the insight the comparative data provide. Currently the environment is simple enough that even degenerate algorithms are able to achieve moderate scores. A comprehensive performance analysis will therefore require more data, but existing data still provide insight into the problem.
+As the goal of this project is to provide comparative data about different local search algorithms, the project should be evaluated based on the insight the comparative data provide. Currently the environment is simple enough that even degenerate algorithms are able to achieve moderate scores. A comprehensive performance analysis will therefore require more data. However, existing observations about the performance of each algorithm still provide a meaningful basis for evaluating the progress of the project so far.
 
 Both the hill-climbing and genetic algorithms converge to similar solutions. This suggests that the solution they find isn't merely random, but is optimal for the environment. Indeed, examining the environment, it is easy to see how a sequence in which the agent moves towards the nearest diamond three times, then away from the enemy once or twice, then towards the next diamond until it captures it, would produce the best score. Bot the genetic and hill-climbing algorithms converge on this sequence.
 
 <img src="media/optimal_path.png" alt="Optimal Path" style="display: block; text-align: center; margin-left: auto; margin-right: auto; height: 325px;" />
 
-Because the genetic and hill-climbing algorithms can identify this sequence as optimal, they can achieve higher peak performance than an algorithm that just mindlessly moves towards the nearest diamond at all times. A degenerate algorithm like that has no way of exceeding a score of around 50, because it will always be immediately killed by the Zombie after capturing the first diamond. However, both the genetic and hill-climbing algorithms spend much of their time exploring suboptimal sequences. This means that, although they achieve higher peak performance their average performance is not substantially improved over the performance of a degenerate algorithm.
+Because the genetic and hill-climbing algorithms can identify this sequence as optimal, they can achieve higher peak performance than an algorithm that just mindlessly moves towards the nearest diamond at all times. Such an algorithm has no way of exceeding a score of around 50, because agent will always be immediately killed by the Zombie after capturing the first diamond. However, both the genetic and hill-climbing algorithms spend much of their time exploring suboptimal sequences. This means that, although they achieve higher peak performance their average performance is not substantially improved over the performance of a degenerate algorithm.
 
 <img src="media/performance_graph.png" alt="Performance Comparison" style="display: block; margin-left: auto; margin-right: auto; height: 325px;" />
 <div style="text-align: center; font-style: italic; margin-left: 2in; margin-right: 2in;">
-  The <span style="color: #F00;">red</span> line tracks the performance of the <span style="color: #F00;">genetic</span> algorithm, the <span style="color: #0F0;">green</span> line tracks the performance of the <span style="color: #0F0;">hill-climbing</span> algorithm, and the <span style="color: #00F;">blue</span> line tracks the performance of the <span style="color: #00F;">degenerate</span> algorithm.
+  The <span style="color: #F00;">red</span> line tracks the performance of the <span style="color: #F00;">genetic</span> algorithm, the <span style="color: #0F0;">green</span> line tracks the performance of the <span style="color: #0F0;">hill-climbing</span> algorithm, and the <span style="color: #00F;">blue</span> line tracks the performance of the <span style="color: #00F;">baseline</span> degenerate algorithm.<br />
 </div>
+
+Indeed, if we compare the means and standard deviations of the scores of the different algorithms, we see that though the genetic and hill-climbing algorithms have a slightly lower average than our simple baseline algorithm, their standard deviation (and therefore peak performance levels) are higher.
+
+<table style="text-align: center;" class="alg_data">
+    <tr>
+        <th>Algorithm</th>
+        <th>Mean Score</th>
+        <th>Standard Deviation</th>
+    </tr>
+    <td>
+        <th>Baseline</th>
+        <td>56</td>
+        <td>19</td>
+    </td>
+    <td>
+        <th>Hill-Climbing</th>
+        <td>49</td>
+        <td>34</td>
+    </td>
+    <td>
+        <th>Genetic</th>
+        <td>56</td>
+        <td>35</td>
+    </td>
+</table>
+<br />
 
 As we test the algorithm in more and more complex environments, average performance differences should become more stark. A simple algorithm will likely be unable to achieve reasonable performance in a complex environment. Furthermore, while currently heuristic strings that are only slightly suboptimal have near-random performance, in a more complex environment with longer heuristic strings, a slightly suboptimal string will likely have much better than random performance. As the project progresses, we will therefore have more insightful comparative data with which we can analyze these algorithms.
 
