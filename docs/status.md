@@ -53,14 +53,15 @@ Because the genetic and hill-climbing algorithms can identify this sequence as o
 
 Indeed, if we compare the means and standard deviations of the scores of the different algorithms, we see that though the genetic and hill-climbing algorithms have a slightly lower average than our simple baseline algorithm, their standard deviation (and therefore peak performance levels) are higher.
 
-<table style="text-align: center;" class="alg_data">
+<table style="text-align: center; margin-left: auto; margin-right: auto;" class="alg_data">
     <style scoped type="text/css">
         td, th
         {
             border: 1px solid black;
+            padding: .25em;
         }
 
-        tr th
+        tr:first-child th
         {
             background-color: #E7E7E7;
         }
