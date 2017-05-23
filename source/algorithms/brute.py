@@ -5,6 +5,7 @@ from algorithm import algorithm
 class brute(algorithm):
 	def __init__(self, set_actions, init_str = []):
 		super(brute, self).__init__(set_actions)
+		self.sLen = 0
 		self.local_space = []
 		self.local_space = self.generate_next_strings()
 		self.space_index = 0
@@ -18,10 +19,14 @@ class brute(algorithm):
 			for i in range(len(self.possible_actions)):
 				all_strings.append([self.possible_actions[i]])
 		else:
+			new_strings = []
 			for j in range(len(all_strings)):
-				for k in range(len(self.possible_actions)):
-					all_strings.append(all_strings[j] + [self.possible_actions[k]])
+				if(len(all_strings[j]) == self.sLen):
+					for k in range(len(self.possible_actions)):
+						new_strings.append(all_strings[j] + [self.possible_actions[k]])
+			all_strings = all_strings + new_strings
 
+		self.sLen += 1
 		return all_strings
 			
 
