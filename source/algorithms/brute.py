@@ -4,10 +4,10 @@ from algorithm import algorithm
 
 class brute(algorithm):
 	def __init__(self, set_actions, init_str = []):
-		super(greedy, self).__init__(set_actions)
+		super(brute, self).__init__(set_actions)
 		self.sLen = 1
-		self.local_space = self.generate_all_strings()
 		self.space_scores = []
+		self.local_space = self.generate_next_strings()
 		self.space_index = 0
 		self.move = 0
 		self.max = 0
@@ -15,8 +15,8 @@ class brute(algorithm):
 	def generate_next_strings(self):
 		all_strings = self.space_scores
 		if len(all_strings) == 0:
-			for i in range(self.possible_actions):
-				all_strings.append([self.possible_actions(i)])
+			for i in range(len(self.possible_actions)):
+				all_strings.append([self.possible_actions[i]])
 		else:
 			for j in range(len(all_strings)):
 				for k in range(len(self.possible_actions)):

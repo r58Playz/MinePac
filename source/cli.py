@@ -21,7 +21,7 @@ def get_algorithm(alg_selected):
     elif alg_selected == "annealing2" or alg_selected == "anneal2":
         return climber2([h.towards_item, h.away_from_enemy], 1.0, 0.5)
     elif alg_selected == "brute":
-        return brute([h.towards_item, h.away_from_enemy, h.random_direction])
+        return brute([h.towards_item, h.away_from_enemy])
     elif alg_selected == "mcts":
         pass
     else: pass
