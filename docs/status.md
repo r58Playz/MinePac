@@ -104,4 +104,4 @@ We would also like to test the algorithms in different environments, with differ
 Finally, we plan to implement and test a greater number of algorithms. Some algorithms, such as a simulated annealing algorithm, have already been coded; there just was not enough time run a longer test on them before the progress report. Other algorithms may simply be variations on ones already implemented. For example, we may compare the success of the genetic algorithm with different population sizes, or the success of a simulated annealing algorithm with different cooling rates. This goal is probably the most essential to the project. As the purpose of the project is to provide an insightful comparison between various different local search algorithms, we need multiple local search algorithms to compare.
 
 ## Video
-*Work in progress*
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/OEJmt3fIFSU" frameborder="0" allowfullscreen></iframe>
