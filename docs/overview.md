@@ -5,7 +5,7 @@ title:	Overview
 
 ## System Overview of MinePac
 
-<img src="media/architectural_map.PNG" alt="System Architecture" style="display: block; margin-left: auto; margin-right: auto; height: 325px;" />
+<img src="media/architectural_map.png" alt="System Architecture" style="display: block; margin-left: auto; margin-right: auto; height: 325px;" />
 
 ### Legend
 
