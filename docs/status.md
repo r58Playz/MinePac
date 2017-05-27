@@ -47,11 +47,11 @@ As the goal of this project is to provide comparative data about different local
 
 Both the hill-climbing and genetic algorithms converge to similar solutions. This suggests that the solution they find isn't merely random, but is optimal for the environment. Indeed, examining the environment, it is easy to see how a sequence in which the agent moves towards the nearest diamond three times, then away from the enemy once or twice, then towards the next diamond until it captures it, would produce the best score. Bot the genetic and hill-climbing algorithms converge on this sequence.
 
-<img src="media/optimal_path.png" alt="Optimal Path" style="display: block; text-align: center; margin-left: auto; margin-right: auto; height: 325px;" />
+<img src="media/optimal_path.png" alt="Optimal Path" style="height: 325px;" />
 
 Because the genetic and hill-climbing algorithms can identify this sequence as optimal, they can achieve higher peak performance than an algorithm that just mindlessly moves towards the nearest diamond at all times. Such an algorithm has no way of exceeding a score of around 50, because agent will always be immediately killed by the Zombie after capturing the first diamond. However, both the genetic and hill-climbing algorithms spend much of their time exploring suboptimal sequences. This means that, although they achieve higher peak performance their average performance is not substantially improved over the performance of a degenerate algorithm.
 
-<img src="media/performance_graph.png" alt="Performance Comparison" style="display: block; margin-left: auto; margin-right: auto; height: 325px;" />
+<img src="media/performance_graph.png" alt="Performance Comparison" style="height: 325px;" />
 <div style="text-align: center; font-style: italic; margin-left: 2in; margin-right: 2in;">
   The <span style="color: #F00;">red</span> line tracks the performance of the <span style="color: #F00;">genetic</span> algorithm, the <span style="color: #0F0;">green</span> line tracks the performance of the <span style="color: #0F0;">hill-climbing</span> algorithm, and the <span style="color: #00F;">blue</span> line tracks the performance of the <span style="color: #00F;">baseline</span> degenerate algorithm.<br /><br />
 </div>
