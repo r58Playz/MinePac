@@ -9,6 +9,6 @@ title:	Overview
 
 ### Legend
 
-Solid arrow: Data flow
+Solid arrow: data feed
 
-Dashed line (--): proposed / not implemented
+Dashed line (--): proposed change / not implemented
