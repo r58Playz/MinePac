@@ -15,7 +15,7 @@ def rolling_average(l, i, g):
     return float(total) / float(g)
 
 def graph_csv(csv, g, cutoff, logging_level, style):
-    X = np.genfromtxt(csv)
+    X = np.genfromtxt(csv, delimiter=',')
     X = np.array([x[-1] for x in X if x[0] <= logging_level])
 
     M = len(X)
@@ -45,7 +45,7 @@ def get_int_param(prompt, default):
 def get_file_params(): # returns file name, moving average window size, and logging level
     f = None
     while f == None:
-        f = raw_input("Enter the relative path of the log file (or type \"done\" if you are finished specifying files): ")
+        f = raw_input("Enter the relative path of the log file (or type \"done\" if you are ready to graph): ")
         if not os.path.isfile(f) and f.lower() != "done":
             f = None
             print "ERROR: specified path is not a file. Please try again."
