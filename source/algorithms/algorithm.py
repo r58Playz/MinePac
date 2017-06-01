@@ -36,10 +36,9 @@ class algorithm(object):
 	def process_score(self, score):
 		raise NotImplementedError
 
-	@abc.abstractmethod
 	def set_score(self, score):
 		log_lines = self.process_score(score)
-		
+
 		with open(algorithm.log_file, "a+") as log:
 			for logging_level, s in log_lines:
 				log.write(str(logging_level) + "," + str(s) + "\n")
