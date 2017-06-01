@@ -79,10 +79,12 @@ class climber2(algorithm):
 
 		self.neighbor_scores.append(score)
 		self.move = 0
+		log_score = 1
 
                 # if we have searched all neighbors, found an improvement, or if annealing occurs
 		if self.current_score < score or r < self.eps:
                         #############update epsilon here
+                        log_score = 0
                         self.h_str = self.local_space[self.space_index]
 			self.current_score = score
 			print ("String updated. New string: " + str([h.__name__[0] for h in self.h_str]))
@@ -100,7 +102,7 @@ class climber2(algorithm):
 		else:
                         self.space_index += 1
 
-		return [(0, score)]
+		return [(log_score, score)]
 
 	def get_action(self, obs):
                 if self.move == 0:
