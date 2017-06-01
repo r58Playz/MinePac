@@ -79,7 +79,7 @@ class climber2(algorithm):
 
 		self.neighbor_scores.append(score)
 		self.move = 0
-		log_score = 1
+		log_list = []
 
                 # if we have searched all neighbors, found an improvement, or if annealing occurs
 		if self.current_score < score or r < self.eps:
@@ -92,6 +92,7 @@ class climber2(algorithm):
 			self.local_space = self.generate_local_space()
 			self.space_index = 0
 			self.neighbor_scores = []
+			log_list.append((0, score))
 		elif self.space_index >= len(self.local_space):
                         #when local maxima is reached, continue by picking best neighbor
                         print("Reached local maxima: " + str(self.current_score))
@@ -99,10 +100,13 @@ class climber2(algorithm):
                         self.pick_best_neighbor()
                         print("Picking best neighbor: " + str([h.__name__[0] for h in self.h_str]))
                         print("New score: " + str(self.current_score))
+                        log_list.append((0, self.current_score))
+                        log_list.append((1, score))
 		else:
                         self.space_index += 1
+                        log_list.append((1, score))
 
-		return [(log_score, score)]
+		return log_list
 
 	def get_action(self, obs):
                 if self.move == 0:
