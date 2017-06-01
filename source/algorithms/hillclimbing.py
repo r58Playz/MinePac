@@ -50,6 +50,8 @@ class climber(algorithm):
 			best_i = random.randint(0, len(self.local_space) - 1)
 			best_score = self.neighbor_scores[i]
 			best_neighbor = self.local_space[i]
+
+			self.eps *= self.cooling_rate
 		else:
 			best_score = 0
 			best_neighbor = None # find the neighbor with the best score, then start looking from there
