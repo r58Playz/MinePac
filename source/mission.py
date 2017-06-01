@@ -42,13 +42,12 @@ class observation:
 
 
 class mission:
-	def __init__(self, record_file_name):
+	def __init__(self):
 		self.missionXML = ""
 		self.agent_host = None
 		self.malmo_mission = None
 		self.malmo_mission_record = None
 		self.world_state = None
-		self.record_file = record_file_name
 
 		self.number = 0
 
@@ -186,11 +185,5 @@ class mission:
 	def item_score(self):
 		return self.num_items
 
-	def score(self, record = False):
-		s = self.item_score() * 50 + self.time_score()
-
-		if record:
-			with open(self.record_file, "a+") as log:
-				log.write(str(s) + "\n")
-
-		return s
+	def score(self):
+		return self.item_score() * 50 + self.time_score()

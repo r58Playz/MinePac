@@ -28,24 +28,26 @@ class brute(algorithm):
 
 		self.sLen += 1
 		return all_strings
-			
 
-	def set_score(self, score):
+
+	def process_score(self, score):
 		print ("String: " + str([h.__name__[0] for h in self.local_space[self.space_index]]))
 
 		self.space_scores.append(score)
 		self.space_index += 1
 		self.move = 0
-		
+
 		if self.space_index >= len(self.local_space):
 			newmax = max(self.space_scores)
 			if(newmax > self.max or len(self.local_space[self.space_index - 1]) < 5): #prevent algorithm from stopping too early if string is too short
 				self.max = newmax
 				self.local_space = self.generate_next_strings()
+				return [(0, self.max), (1, score)]
+
+		return [(1, score)]
 
 	def get_action(self, obs):
 		curr_str = self.local_space[self.space_index]
 		a = curr_str[self.move % len(curr_str)]
 		self.move += 1
 		return a(obs)
-		

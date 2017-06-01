@@ -6,6 +6,7 @@ from algorithms.genetic import genetic
 from algorithms.hillclimbing import climber
 from algorithms.hillclimbing2 import climber2
 from algorithms.brute import brute
+from algorithms.algorithm import algorithm
 
 import heuristics as h
 
@@ -38,6 +39,14 @@ def valid_algorithms(): # dictionary in format 'algorithm name': 'algorithm desc
                 "brute": "brute force method of finding optimal solution by exploring all possible string combinations"
             }
 
+def build_maze_filepath(maze):
+    if not maze.lower().endswith(".xml"):
+        maze += ".xml"
+    if not maze.lower().startswith("mazes/"):
+        maze = "mazes/" + maze
+
+    return maze
+
 def algorithms_list():
     l = "available algorithms:\n"
 
@@ -64,7 +73,7 @@ def parse_args():
     # parser.add_argument("-f", "--file", type=str, help="specifies the name of the output log file (named with the timestamp by default)") # optional arguments not working for some reason
 
     args = parser.parse_args()
-    maze = args.maze
+    maze = build_maze_filepath(args.maze)
     alg = get_algorithm(args.algorithm)
     #if not args.file:
     out_file = "logs/log_" + args.algorithm + "_" + str(time.time()) + ".csv"
@@ -72,6 +81,8 @@ def parse_args():
         os.makedirs("logs")
     #else:
     #    out_file = args.file
+
+    algorithm.log_file = out_file
 
     if alg == None:
         print "ERROR: You must specify a valid algorithm."

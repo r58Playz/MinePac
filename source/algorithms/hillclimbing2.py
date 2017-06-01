@@ -28,7 +28,7 @@ class climber2(algorithm):
                 if len(self.h_str) == 0:
                         self.h_str = [random.choice(self.possible_actions)]
                         return [self.h_str]
-                
+
 		space = [self.h_str]
 
 		for i in range(0, len(self.h_str)): # add all remove changes
@@ -74,7 +74,7 @@ class climber2(algorithm):
 		self.local_space = self.generate_local_space()
 
 
-	def set_score(self, score):
+	def process_score(self, score):
                 r = random.random()
 
 		self.neighbor_scores.append(score)
@@ -100,11 +100,13 @@ class climber2(algorithm):
 		else:
                         self.space_index += 1
 
+		return [(0, score)]
+
 	def get_action(self, obs):
                 if self.move == 0:
                         print
                         print ("String: " + str([h.__name__[0] for h in self.local_space[self.space_index]]))
-                        
+
 		curr_str = self.local_space[self.space_index]
 		a = curr_str[self.move % len(curr_str)]
 

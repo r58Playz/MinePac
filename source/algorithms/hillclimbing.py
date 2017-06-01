@@ -47,7 +47,9 @@ class climber(algorithm):
 		r = random.random()
 
 		if r < self.eps: # in simulated annealing, we have a chance to make a suboptimal choice
-			best_neighbor = random.choice(self.local_space)
+			best_i = random.randint(0, len(self.local_space) - 1)
+			best_score = self.neighbor_scores[i]
+			best_neighbor = self.local_space[i]
 		else:
 			best_score = 0
 			best_neighbor = None # find the neighbor with the best score, then start looking from there
@@ -64,7 +66,9 @@ class climber(algorithm):
 
 		self.local_space = self.generate_local_space()
 
-	def set_score(self, score):
+		return best_score
+
+	def process_score(self, score):
 		print ("String: " + str([h.__name__[0] for h in self.local_space[self.space_index]]))
 
 		self.neighbor_scores.append(score)
@@ -73,6 +77,9 @@ class climber(algorithm):
 
 		if self.space_index >= len(self.local_space): # if we have searched all neighbors
 			self.pick_next_string()
+			return [(1, score), (0, best_score)]
+
+		return [(1, score)]
 
 	def get_action(self, obs):
 		curr_str = self.local_space[self.space_index]

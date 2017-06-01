@@ -9,7 +9,7 @@ from mission import mission
 if __name__ == "__main__":
 	mazeXMLFile, a, out = parse_args()
 
-	m = mission(out)
+	m = mission()
 	m.load(mazeXMLFile)
 
 	## need a method to incorporate all the algorithms (i.e. for alg in alg_list: try)
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 			m.check_errors()
 
 		m.stop_clock()
-		s = m.score(record = True)
+		s = m.score()
 
 		print ("\nMission ended with score: " + str(s))
 		a.set_score(s)

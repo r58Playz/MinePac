@@ -28,15 +28,20 @@ class genetic(algorithm):
 
 			self.population.append(actions)
 
-	def set_score(self, score):
+	def process_score(self, score):
 		self.scores[self.iteration % self.generation_size] = score
-		if self.iteration != 0 and self.iteration % self.generation_size == 0:
-			self.next_generation()
 
 		self.iteration += 1
 		self.move = 0
 
 		print ("Next action string: " + str([f.__name__[0] for f in self.population[self.iteration % self.generation_size]]))
+
+		if self.iteration % self.generation_size == 0:
+			best_scores = self.next_generation()
+			return [(0, s) for s in best_scores]
+
+		return [(1, score)]
+
 
 	def get_action(self, obs):
 		policy = self.population[self.iteration % self.generation_size]
@@ -81,3 +86,5 @@ class genetic(algorithm):
 
 		self.population = new_population
 		self.scores = [0] * self.generation_size
+
+		return best_scores

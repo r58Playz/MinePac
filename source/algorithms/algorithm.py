@@ -12,7 +12,12 @@ set_score:
 	parameters:
 		score: the numerical score of the mission that just completed
 	returns:
-		nothing
+		a list of tuples [(logging_level, score)]
+		score:
+			the score that will be logged
+		logging_level:
+		 	used to filter out scores when processing data
+			the higher the logging level, the less important the score
 
 get_action:
 	parameters:
@@ -22,12 +27,22 @@ get_action:
 '''
 
 class algorithm(object):
+	log_file = "" # static field, set in cli
+
 	def __init__(self, set_actions):
 		self.possible_actions = set_actions
 
 	@abc.abstractmethod
-	def set_score(self, score):
+	def process_score(self, score):
 		raise NotImplementedError
+
+	@abc.abstractmethod
+	def set_score(self, score):
+		log_lines = self.process_score(score)
+		
+		with open(algorithm.log_file, "a+") as log:
+			for logging_level, s in log_lines:
+				log.write(str(logging_level) + "," + str(s) + "\n")
 
 	@abc.abstractmethod
 	def get_action(self, obs):
