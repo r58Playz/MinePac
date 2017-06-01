@@ -83,7 +83,7 @@ class climber2(algorithm):
 
                 # if we have searched all neighbors, found an improvement, or if annealing occurs
 		if self.current_score < score or r < self.eps:
-                        #############update epsilon here
+                        self.eps *= self.cooling_rate
                         log_score = 0
                         self.h_str = self.local_space[self.space_index]
 			self.current_score = score
