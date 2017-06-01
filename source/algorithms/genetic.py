@@ -36,11 +36,13 @@ class genetic(algorithm):
 
 		print ("Next action string: " + str([f.__name__[0] for f in self.population[self.iteration % self.generation_size]]))
 
+		scores = [(1, score)]
+
 		if self.iteration % self.generation_size == 0:
 			best_scores = self.next_generation()
-			return [(0, s) for s in best_scores]
+			scores.extend([(0, s) for s in best_scores])
 
-		return [(1, score)]
+		return scores
 
 
 	def get_action(self, obs):
