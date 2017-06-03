@@ -78,7 +78,7 @@ class climber(algorithm):
 		self.move = 0
 
 		if self.space_index >= len(self.local_space): # if we have searched all neighbors
-			self.pick_next_string()
+			best_score = self.pick_next_string()
 			return [(1, score), (0, best_score)]
 
 		return [(1, score)]
