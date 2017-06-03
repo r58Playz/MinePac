@@ -72,10 +72,10 @@
 			</ObservationFromGrid>
 			<ObservationFromDistance>
 				<!-- CHANGE THESE IF YOU WANT THE EDGE HEURISTICS TO WORK -->
-				<Marker x="13.5" y="56" z="-14" name="Top" />
-				<Marker x="27" y="56" z="1" name="Right" />
-				<Marker x="13.5" y="56" z="16" name="Bottom" />
-				<Marker x="0" y="56" z="1" name="Left" />
+				<Marker x="0" y="56" z="16" name="Top" />
+				<Marker x="8" y="56" z="8" name="Right" />
+				<Marker x="0" y="56" z="0" name="Bottom" />
+				<Marker x="-8" y="56" z="8" name="Left" />
 			</ObservationFromDistance>
 			<ObservationFromNearbyEntities>
 				<Range name="entityCoordinates" xrange="100" yrange="3" zrange="100"/>
