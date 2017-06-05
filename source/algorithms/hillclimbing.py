@@ -40,6 +40,8 @@ class climber(algorithm):
 				a.insert(i, h)
 				space.append(a)
 
+		space = [list(x) for x in set(tuple(x) for x in space)]
+
 		return space
 
 	def pick_next_string(self):
