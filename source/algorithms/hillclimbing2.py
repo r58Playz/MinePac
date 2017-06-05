@@ -54,6 +54,14 @@ class climber2(algorithm):
 
 		random.shuffle(space)
 
+                #roll for annealing here
+		r = random.random()
+		if(r < self.eps):
+                        space = space[1]
+
+                #temperature schedule update
+                self.eps *= self.cooling_rate
+
 		return space
 
 	def pick_best_neighbor(self):
@@ -75,16 +83,11 @@ class climber2(algorithm):
 
 
 	def process_score(self, score):
-                r = random.random()
-
 		self.neighbor_scores.append(score)
 		self.move = 0
 		log_list = []
 
-                # if we have searched all neighbors, found an improvement, or if annealing occurs
-		if self.current_score < score or r < self.eps:
-                        self.eps *= self.cooling_rate
-                        log_score = 0
+		if self.current_score < score: #if improvement found
                         self.h_str = self.local_space[self.space_index]
 			self.current_score = score
 			print ("String updated. New string: " + str([h.__name__[0] for h in self.h_str]))
@@ -93,7 +96,7 @@ class climber2(algorithm):
 			self.space_index = 0
 			self.neighbor_scores = []
 			log_list.append((0, score))
-		elif self.space_index >= len(self.local_space):
+		elif self.space_index >= len(self.local_space): #if all neighbors searched
                         #when local maxima is reached, continue by picking best neighbor
                         print("Reached local maxima: " + str(self.current_score))
                         print("Current string: " + str([h.__name__[0] for h in self.h_str]))

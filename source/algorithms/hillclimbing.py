@@ -42,28 +42,28 @@ class climber(algorithm):
 
 		space = [list(x) for x in set(tuple(x) for x in space)]
 
+		#roll for annealing here
+		r = random.random()
+		if(r < self.eps):
+			space = space[1]
+
+		#temperature schedule update
+		self.eps *= self.cooling_rate
+
 		return space
 
 	def pick_next_string(self):
 		self.space_index = 0
-		r = random.random()
+		
+		best_score = 0
+		best_neighbor = None # find the neighbor with the best score, then start looking from there
 
-		if r < self.eps: # in simulated annealing, we have a chance to make a suboptimal choice
-			best_i = random.randint(0, len(self.local_space) - 1)
-			best_score = self.neighbor_scores[i]
-			best_neighbor = self.local_space[i]
+		for i, s in enumerate(self.neighbor_scores):
+			if s > best_score:
+				best_score = s
+				best_neighbor = self.local_space[i]
 
-			self.eps *= self.cooling_rate
-		else:
-			best_score = 0
-			best_neighbor = None # find the neighbor with the best score, then start looking from there
-
-			for i, s in enumerate(self.neighbor_scores):
-				if s > best_score:
-					best_score = s
-					best_neighbor = self.local_space[i]
-
-			print ("Best neighbor's score: " + str(best_score))
+		print ("Best neighbor's score: " + str(best_score))
 
 		self.h_str = best_neighbor
 		self.neighbor_scores = []
