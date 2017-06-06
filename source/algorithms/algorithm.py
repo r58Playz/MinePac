@@ -40,8 +40,9 @@ class algorithm(object):
 		log_lines = self.process_score(score)
 
 		with open(algorithm.log_file, "a+") as log:
-			for logging_level, s in log_lines:
-				log.write(str(logging_level) + "," + str(s) + "\n")
+			for logging_level, sc, st in log_lines:
+                                h_str = str([h.__name__[0] for h in st]).replace(',', '')
+				log.write(str(logging_level) + "," + str(sc) + "," + h_str + "\n")
 
 	@abc.abstractmethod
 	def get_action(self, obs):
