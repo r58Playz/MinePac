@@ -14,6 +14,9 @@ class climber2(algorithm):
 		self.h_str = []
 		self.possible_actions = set_actions
 
+		self.eps = init_eps
+		self.cooling_rate = set_cooling
+
 		self.local_space = self.generate_local_space()
 
 		self.neighbor_scores = []
@@ -21,8 +24,8 @@ class climber2(algorithm):
 		self.space_index = 0
 		self.current_score = 0
 
-		self.eps = init_eps
-		self.cooling_rate = set_cooling
+		self.anneal = False
+		
 
 	def generate_local_space(self):
                 if len(self.h_str) == 0:
@@ -57,7 +60,7 @@ class climber2(algorithm):
                 #roll for annealing here
 		r = random.random()
 		if(r < self.eps):
-                        space = space[1]
+                        self.anneal = True
 
                 #temperature schedule update
                 self.eps *= self.cooling_rate
@@ -87,6 +90,17 @@ class climber2(algorithm):
 		self.move = 0
 		log_list = []
 
+                if self.anneal == True:
+                        self.anneal = False
+                        self.h_str = self.local_space[self.space_index]
+                        self.current_score = score
+                        print("Annealing occured.")
+                        print ("String updated. New string: " + str([h.__name__[0] for h in self.h_str]))
+			print
+			self.local_space = self.generate_local_space()
+                        self.space_index = 0
+			self.neighbor_scores = []
+			log_list.append((0, score))
 		if self.current_score < score: #if improvement found
                         self.h_str = self.local_space[self.space_index]
 			self.current_score = score

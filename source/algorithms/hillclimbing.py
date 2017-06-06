@@ -9,14 +9,16 @@ class climber(algorithm):
 		self.h_str = [random.choice(set_actions)]
 		self.possible_actions = set_actions
 
+                self.eps = init_eps
+		self.cooling_rate = set_cooling
+
 		self.local_space = self.generate_local_space()
 
 		self.neighbor_scores = []
 		self.move = 0
 		self.space_index = 0
 
-		self.eps = init_eps
-		self.cooling_rate = set_cooling
+		self.anneal = False
 
 	def generate_local_space(self):
 		space = [self.h_str]
@@ -41,11 +43,12 @@ class climber(algorithm):
 				space.append(a)
 
 		space = [list(x) for x in set(tuple(x) for x in space)]
+		random.shuffle(space)
 
 		#roll for annealing here
 		r = random.random()
 		if(r < self.eps):
-			space = space[1]
+			self.anneal = True
 
 		#temperature schedule update
 		self.eps *= self.cooling_rate
@@ -79,7 +82,10 @@ class climber(algorithm):
 		self.space_index += 1
 		self.move = 0
 
-		if self.space_index >= len(self.local_space): # if we have searched all neighbors
+                if(self.anneal == True):
+                        self.anneal = False
+                        self.pick_next_string()
+		elif self.space_index >= len(self.local_space): # if we have searched all neighbors
 			best_score = self.pick_next_string()
 			return [(1, score), (0, best_score)]
 
