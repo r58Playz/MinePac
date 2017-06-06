@@ -33,13 +33,13 @@ class brute(algorithm):
 	def process_score(self, score):
 		print ("String: " + str([h.__name__[0] for h in self.local_space[self.space_index]]))
 
-                self.space_scores.append(score)
+		self.space_scores.append(score)
 		self.space_index += 1
 		self.move = 0
 
 		if(self.max < score):
-                        self.max = score
-                        return [(0, score, self.local_space[self.space_index-1])]
+			self.max = score
+			return [(0, score, self.local_space[self.space_index-1])]
 
 		if self.space_index >= len(self.local_space):
 			if(len(self.local_space[self.space_index - 1]) < 10): #prevent algorithm from stopping too early if string is too short
