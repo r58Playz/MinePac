@@ -36,11 +36,11 @@ class genetic(algorithm):
 
 		print ("Next action string: " + str([f.__name__[0] for f in self.population[self.iteration % self.generation_size]]))
 
-		scores = [(1, score)]
+		scores = [(1, score, self.population[self.iteration % self.generation_size])]
 
 		if self.iteration % self.generation_size == 0:
-			best_scores = self.next_generation()
-			scores.extend([(0, s) for s in best_scores])
+			fittest = self.next_generation()
+			scores.extend([(0, s, p) for p, s in fittest])
 
 		return scores
 
@@ -67,12 +67,12 @@ class genetic(algorithm):
 		#now select every string in the population that has one of the best scores
 		for i, p in enumerate(self.population):
 			if self.scores[i] in best_scores:
-				fittest.append(p)
+				fittest.append((p, self.scores[i]))
 
 		#now generate the next generation of heuristic function strings
 		for i in range(self.generation_size):
-			first_parent = random.choice(fittest)
-			second_parent = random.choice(fittest)
+			first_parent = random.choice(fittest)[0]
+			second_parent = random.choice(fittest)[0]
 
 			crossover = random.random()
 			first_crossover = int(crossover * (len(first_parent) - 1))
@@ -89,4 +89,4 @@ class genetic(algorithm):
 		self.population = new_population
 		self.scores = [0] * self.generation_size
 
-		return best_scores
+		return fittest
