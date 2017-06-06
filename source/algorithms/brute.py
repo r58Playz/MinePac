@@ -39,7 +39,7 @@ class brute(algorithm):
 
 		if(self.max < score):
                         self.max = score
-                        return [(1, score, self.local_space[self.space_index-1])]
+                        return [(0, score, self.local_space[self.space_index-1])]
 
 		if self.space_index >= len(self.local_space):
 			if(len(self.local_space[self.space_index - 1]) < 10): #prevent algorithm from stopping too early if string is too short
