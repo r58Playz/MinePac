@@ -78,6 +78,8 @@ class climber(algorithm):
 	def process_score(self, score):
 		print ("String: " + str([h.__name__[0] for h in self.local_space[self.space_index]]))
 
+		current_str = self.local_space[self.space_index]
+
 		self.neighbor_scores.append(score)
 		self.space_index += 1
 		self.move = 0
@@ -85,11 +87,12 @@ class climber(algorithm):
                 if(self.anneal == True):
                         self.anneal = False
                         self.pick_next_string()
+                        return [(0, score, current_str)]
 		elif self.space_index >= len(self.local_space): # if we have searched all neighbors
 			best_score = self.pick_next_string()
-			return [(1, score), (0, best_score)]
+			return [(1, score, current_str), (0, best_score, self.h_str)]
 
-		return [(1, score)]
+		return [(1, score, current_str)]
 
 	def get_action(self, obs):
 		curr_str = self.local_space[self.space_index]
