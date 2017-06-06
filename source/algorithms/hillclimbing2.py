@@ -90,6 +90,8 @@ class climber2(algorithm):
 		self.move = 0
 		log_list = []
 
+		current_str = self.local_space[self.space_index]
+
                 if self.anneal == True:
                         self.anneal = False
                         self.h_str = self.local_space[self.space_index]
@@ -100,8 +102,8 @@ class climber2(algorithm):
 			self.local_space = self.generate_local_space()
                         self.space_index = 0
 			self.neighbor_scores = []
-			log_list.append((0, score))
-		if self.current_score < score: #if improvement found
+			log_list.append((0, score, current_str))
+		elif self.current_score < score: #if improvement found
                         self.h_str = self.local_space[self.space_index]
 			self.current_score = score
 			print ("String updated. New string: " + str([h.__name__[0] for h in self.h_str]))
@@ -109,19 +111,19 @@ class climber2(algorithm):
 			self.local_space = self.generate_local_space()
 			self.space_index = 0
 			self.neighbor_scores = []
-			log_list.append((0, score))
-		elif self.space_index >= len(self.local_space): #if all neighbors searched
+			log_list.append((0, score, current_str))
+		elif self.space_index < len(self.local_space) - 1:
+                        self.space_index += 1
+                        log_list.append((1, score, current_str))
+		else: #if all neighbors searched
                         #when local maxima is reached, continue by picking best neighbor
                         print("Reached local maxima: " + str(self.current_score))
                         print("Current string: " + str([h.__name__[0] for h in self.h_str]))
                         self.pick_best_neighbor()
                         print("Picking best neighbor: " + str([h.__name__[0] for h in self.h_str]))
                         print("New score: " + str(self.current_score))
-                        log_list.append((0, self.current_score))
-                        log_list.append((1, score))
-		else:
-                        self.space_index += 1
-                        log_list.append((1, score))
+                        log_list.append((0, self.current_score, self.h_str))
+                        log_list.append((1, score, current_str))
 
 		return log_list
 
