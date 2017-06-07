@@ -145,6 +145,6 @@ Under Construction.
 * **N-Queens Part 1: Steepest Hill Climbing:** <http://letstalkdata.com/2013/12/n-queens-part-1-steepest-hill-climbing/>
 
 *Image Credits:*
-* **Diamond.png** <img src="media/Diamond.png" class="icon" />: [Gamepedia Minecraft Wiki](http://minecraft.gamepedia.com/File:Diamond.png)
-* **Zombie.png** <img src="media/Zombie.png" class="icon" />: [Pinterest](https://s-media-cache-ak0.pinimg.com/originals/ac/65/8a/ac658a2c0bc1117c6d547170b23dec72.jpg)
-* **Steve.png** <img src="media/Steve.png" class="icon" />: [FPSXGames](http://www.fps-x-games.com/2013/06/free-minecraft-steve-head-printable-mask.html)
+* <img src="media/Diamond.png" class="icon" /> **Diamond.png:** [Gamepedia Minecraft Wiki](http://minecraft.gamepedia.com/File:Diamond.png)
+* <img src="media/Zombie.png" class="icon" /> **Zombie.png:** [Pinterest](https://s-media-cache-ak0.pinimg.com/originals/ac/65/8a/ac658a2c0bc1117c6d547170b23dec72.jpg)
+* <img src="media/Steve.png" class="icon" /> **Steve.png:** [FPSXGames](http://www.fps-x-games.com/2013/06/free-minecraft-steve-head-printable-mask.html)
