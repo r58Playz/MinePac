@@ -143,3 +143,7 @@ Under Construction.
 ##References
 * **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
 * **N-Queens Part 1: Steepest Hill Climbing:** <http://letstalkdata.com/2013/12/n-queens-part-1-steepest-hill-climbing/>
+
+*Image Credits:*
+* **Diamond.png** <img src="media/Diamond.png" style="display: inline;" />: [Gamepedia Minecraft Wiki](http://minecraft.gamepedia.com/File:Diamond.png)
+* **Zombie.png** <img src="media/Zombie.png" style="display: inline;" />: [Pinterest](https://s-media-cache-ak0.pinimg.com/originals/ac/65/8a/ac658a2c0bc1117c6d547170b23dec72.jpg)
