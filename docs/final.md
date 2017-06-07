@@ -137,10 +137,10 @@ while True:
   i += 1
 ```
 
-##Evaluation
+## Evaluation
 Under Construction.
 
-##References
+## References
 * **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
 * **N-Queens Part 1: Steepest Hill Climbing:** <http://letstalkdata.com/2013/12/n-queens-part-1-steepest-hill-climbing/>
 
