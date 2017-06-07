@@ -84,10 +84,10 @@ class climber(algorithm):
 		self.space_index += 1
 		self.move = 0
 
-        if(self.anneal == True):
-                self.anneal = False
-                self.pick_next_string()
-                return [(0, score, current_str)]
+		if(self.anneal == True):
+			self.anneal = False
+			self.pick_next_string()
+			return [(0, score, current_str)]
 		elif self.space_index >= len(self.local_space): # if we have searched all neighbors
 			best_score = self.pick_next_string()
 			return [(1, score, current_str), (0, best_score, self.h_str)]
