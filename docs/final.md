@@ -13,7 +13,7 @@ _A priori_, there is no obvious best path through the maze. Local search algorit
 
 The primary goal of this project is to gather data with which we can compare different local search algorithms. To that end, we have tested several local search algorithms in two environments of different complexity. In particular, we have tested a genetic algorithm, a steep hill-climbing algorithm, a greedy hill-climbing algorithm, and a simulated annealing algorithm within these environments against the baseline performance of a brute force algorithm. The results of our tests are presented below.
 
-<table style="text-align: center;">
+<table style="text-align: center; width: 100%;">
     <tr>
         <td><img src="media/maze1.png" alt="Maze 1" style="height: 325px;" /></td>
         <td><img src="media/rooms_maze.png" alt="Rooms" style="height: 325px;" /></td>
