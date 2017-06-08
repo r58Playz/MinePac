@@ -69,7 +69,7 @@ for i in range(population_size):
   population.append(child)
 ```
 
-**Steep Hill-Climbing Algorithm:**
+**Steep Hill-Climbing Algorithm:**  
 Like the genetic algorithm, the hill-climbing algorithm operates on a string of heuristic functions. First, the hill-climbing algorithm runs a mission using one of these strings. As with the genetic algorithm, the agent looks to the next heuristic in the string to determine what move it should make. If it reaches the end of the string, it starts over at the beginning of the string.
 
 After this first string has been scored, the algorithm then runs a mission for each string adjacent to the string in the search space. An adjacent string is a string differing by only one addition of a heuristic from the string, removal of a heuristic, or change of a heuristic. After scoring every adjacent string, the algorithm chooses the string with the best score. It then explores the adjacent strings to that string, choosing the best one of those, and so on. These incremental improvements allow the algorithm to find heuristic strings that produce higher and higher scores.
@@ -84,7 +84,7 @@ while True:
   current_string = best_string
 ```
 
-**Greedy Hill-Climbing Algorithm:**
+**Greedy Hill-Climbing Algorithm:**  
 The greedy hill-climbing algorithm is similar to the steep hill-climbing algorithm. However, instead of examining every neighboring string and choosing the best one, the moment if finds it an adjacent hill-climbing string with better performance than the current string, it switches to using that one. In other words, whereas the steep hill-climbing algorithm searches for the highest-scoring neighbor, the greedy hill-climbing algorithm searches for the first neighbor it finds that improves the agent's score.
 
 ```python
@@ -96,7 +96,7 @@ while True:
       break
 ```
 
-**Simulated Annealing:**
+**Simulated Annealing:**  
 The simulated annealing algorithm is similar to the hill-climbing algorithm, however, it does not always choose the highest-scoring neighbor. Instead, there is a possibility that the algorithm will deliberately choose a suboptimal neighbor. The probability that the algorithm will choose a suboptimal neighbor decreases over time, as the algorithm gets closer and closer to an optimal heuristic string. The purpose of this probabilistic behavior is to maximize the space that the hill-climbing algorithm explores. Rather than sticking with whatever seems locally optimal, the hill-climbing algorithm may find even better strings in areas of the search space that, at first glance, seemed sub-optimal.
 
 ```python
@@ -119,7 +119,7 @@ while True:
   p *= 0.5
 ```
 
-**Brute Force**:
+**Brute Force**:  
 We use a brute force algorithm to provide a baseline against which we can compare the performance of other algorithms. The Brute Force runs a mission using every heuristic string of a given length, and then reports back on the best score for a string of that length. It then examines all strings one heuristic longer than that, repeating the process indefinitely. This algorithm therefore comprehensively (and therefore inefficiently) examines all possible heuristic strings.
 
 ```python
@@ -138,7 +138,7 @@ while True:
 ```
 
 ## Evaluation
-Under Construction.
+As the goal of this project is to provide comparative data about different local search algorithms, this project should be evaluated on the basis of the quality of data it provides. Since our status report, we substantially improved the level of detail in the data that we gather from the project. This has unlocked new methods by which we can quantitatively analyze and compare the performance of the various algorithms.
 
 ## References
 * **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
