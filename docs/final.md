@@ -150,8 +150,8 @@ The logging level helps filter out scores that provide less insight into the alg
 
 Showing only those results logged at level 0, we can clearly see that the algorithms quickly converge to optimal results, without noise:
 
-<img src="media/log0_comparison.png" alt="Log 0 comparison" style="height: 325px; width: 250px;" />
-<div style="margin-left: auto; margin-right: auto; style: text-align: center;">
+<img src="media/log0_comparison.png" alt="Log 0 comparison" style="height: 325px;" />
+<div style="margin-left: auto; margin-right: auto; text-align: center; width: 250px;">
     <strong>Legend</strong>
     <ul style="text-align: left;">
         <li style="color: #F00;">Genetic Algorithm</li>
@@ -177,7 +177,7 @@ However, in our more complex environment, the steep hill-climbing algorithm prod
 
 Although the greedy hill-climbing and simulated annealing algorithms constitute only small modifications to the steep hill-climbing algorithm, they largely solve this problem. Because the greedy hill-climbing algorithm is more willing to explore areas that may not be local optima, it tends to find longer and more complex strings. And because simulated annealing can randomly choose suboptimal strings, it is also able to avoid getting stuck at local optima. Indeed, the ability to avoid fixating on the nearest local optimum is the primary purpose of a simulated annealing algorithm.
 
-
+Our environments demonstrate that the local search algorithms we have tested are able to quickly and successfully find high-scoring paths through the maze. Our quantitative analysis demonstrates the effectiveness of these algorithms, and our qualitative analysis provides insight into the relative strengths and weaknesses of each algorithm.
 
 ## References
 * **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
