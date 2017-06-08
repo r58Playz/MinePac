@@ -69,3 +69,22 @@ code {
     box-shadow: none;
     height: 1.5em;
 }
+
+/* Python Code CSS, because for some reason this isn't automatically applied
+---------------------------------------------------------------------------- */
+code .c
+{
+    font-style: italic;
+    color: #777;
+}
+
+code .k
+{
+    color: #00C;
+    font-weight: bold;
+}
+
+code .mp .bp
+{
+    color: #FFC300;
+}
