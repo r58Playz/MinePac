@@ -152,9 +152,9 @@ The logging level helps filter out scores that provide less insight into the alg
 Showing only those results logged at level 0, we can clearly see that the algorithms quickly converge to optimal results, without noise:
 
 <img src="media/log0_comparison.png" alt="Log 0 comparison" style="height: 325px;" />
-<div style="margin-left: auto; margin-right: auto;">
-    <strong>Legend:<strong>
-    <ul>
+<div style="margin-left: auto; margin-right: auto; style: text-align: center;">
+    <strong>Legend<strong>
+    <ul style="text-align: left;">
         <li style="color: #F00;">Genetic Algorithm</li>
         <li style="color: #0C0;">Steep Hill-Climbing Algorithm</li>
         <li style="color: #00F;">Greedy Hill-Climbing Algorithm</li>
@@ -162,7 +162,7 @@ Showing only those results logged at level 0, we can clearly see that the algori
     </ul>
 </div>
 
-
+Note that this graph should not be taken as a literal plot of scores over time. Each algorithm chooses to log at level 0 at different times. For example, the steep hill-climbing algorithm will log at level 0 much more frequently than the greedy hill-climbing algorithm, because the steep hill-climbing algorithm logs at level 0 only after
 
 ## References
 * **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
