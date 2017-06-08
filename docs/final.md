@@ -153,11 +153,13 @@ Showing only those results logged at level 0, we can clearly see that the algori
 
 <img src="media/log0_comparison.png" alt="Log 0 comparison" style="height: 325px;" />
 <div style="margin-left: auto; margin-right: auto;">
-**Legend:**
-* <span style="color: #F00;">Genetic Algorithm</span>
-* <span style="color: #0C0;">Steep Hill-Climbing Algorithm</span>
-* <span style="color: #00F;">Greedy Hill-Climbing Algorithm</span>
-* <span style="color: #000;">Simulated Anneling</span>
+    <strong>Legend:<strong>
+    <ul>
+        <li style="color: #F00;">Genetic Algorithm</li>
+        <li style="color: #0C0;">Steep Hill-Climbing Algorithm</li>
+        <li style="color: #00F;">Greedy Hill-Climbing Algorithm</li>
+        <li style="color: #000;">Simulated Annealing</li>
+    </ul>
 </div>
 
 
