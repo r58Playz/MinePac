@@ -13,7 +13,7 @@ _A priori_, there is no obvious best path through the maze. Local search algorit
 
 The primary goal of this project is to gather data with which we can compare different local search algorithms. To that end, we have tested several local search algorithms in two environments of different complexity. In particular, we have tested a genetic algorithm, a steep hill-climbing algorithm, a greedy hill-climbing algorithm, and a simulated annealing algorithm within these environments against the baseline performance of a brute force algorithm. The results of our tests are presented below.
 
-<table style="text-align: center; width: 100%; max-width: 768px; margin: 1em auto 1em auto;">
+<table class="comparison">
     <tr>
         <td><img src="media/maze1.png" alt="Maze 1" style="height: 325px;" /></td>
         <td><img src="media/rooms_maze.png" alt="Rooms" style="height: 325px;" /></td>
@@ -143,11 +143,22 @@ As the goal of this project is to provide comparative data about different local
 
 Previously, our program logged the score that the agent received at the end of every mission. Now, the logging format is more complex. After each mission, the algorithm can decide to log one or more scores. The algorithm also logs the heuristic string associated with each score, as well as an integer logging level. The lower the logging level, the more important the score.
 
-The logging level helps filter out scores that provide less insight into the algorithm's performance. For example, the genetic algorithm logs all scores for all strings at level 1, but also logs the scores for the best-scoring strings within each population at level 0. This helps us distinguish between an algorithm's ability to locate good strings, and the algorithm's performance when it is spending time in a more exploratory phase. Every algorithm logs every score at level 1, but additionally will log "important" scores at level 0. The logging behavior for all algorithms is as follows:
+The logging level helps filter out scores that provide less insight into the algorithm's performance, thus substantially reducing the amount of noise in the data. For example, the genetic algorithm logs all scores for all strings at level 1, but also logs the scores for the best-scoring strings within each population at level 0. This helps us distinguish between an algorithm's ability to locate good strings, and the algorithm's performance when it is spending time in a more exploratory phase. Every algorithm logs every score at level 1, but additionally will log "important" scores at level 0. The logging behavior for all algorithms is as follows:
 
 * **Genetic Algorithm:** logs the scores for the highest-scoring members of each generation at level 0.
 * **Hill-Climbing / Annealing Algorithms:** logs the scores for each string that causes the algorithm to switch its `current_string` at level 0.
 * **Brute Force Algorithm:** logs the scores for the best string of a given length at level 0.
+
+Showing only those results logged at level 0, we can clearly see that the algorithms quickly converge to optimal results, without noise:
+
+<img src="media/log0_comparison.png" alt="Log 0 comparison" style="height: 325px;" />
+<div style="margin-left: auto; margin-right: auto;">
+**Legend:**
+* <span style="color: #F00;">Genetic Algorithm</span>
+* <span style="color: #0C0;">Steep Hill-Climbing Algorithm</span>
+* <span style="color: #00F;">Greedy Hill-Climbing Algorithm</span>
+* <span style="color: #000;">Simulated Anneling</span>
+</div>
 
 
 

@@ -70,6 +70,14 @@ code {
     height: 1.5em;
 }
 
+table.comparison
+{
+    text-align: center;
+    width: 100%;
+    max-width: 768px;
+    margin: 1em auto 1em auto;
+}
+
 /* Python Code CSS, because for some reason this isn't automatically applied
 ---------------------------------------------------------------------------- */
 code .c
