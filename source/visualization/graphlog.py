@@ -18,14 +18,13 @@ def graph_csv(csv, g, cutoff, logging_level, style):
     X = np.genfromtxt(csv, delimiter=',')
     X = np.array([x[-1] for x in X if x[0] <= logging_level])
 
-    M = len(X)
-
     if len(X) > cutoff and cutoff > 0:
         X = X[:cutoff]
 
-    avg = np.array([rolling_average(X, i, g) for i in range(M)])
+    M = len(X)
 
-    plt.plot(range(len(avg)), avg, style, lw=3.0)
+    avg = np.array([rolling_average(X, i, g) for i in range(M)])
+    plt.bar(range(len(avg)), avg, style, lw=3.0)
 
 def get_int_param(prompt, default):
     i = None
