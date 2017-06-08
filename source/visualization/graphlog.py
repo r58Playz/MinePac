@@ -24,7 +24,7 @@ def graph_csv(csv, g, cutoff, logging_level, style):
     M = len(X)
 
     avg = np.array([rolling_average(X, i, g) for i in range(M)])
-    plt.bar(range(len(avg)), avg, style, lw=3.0)
+    plt.plot(range(len(avg)), avg, style, lw=3.0)
 
 def get_int_param(prompt, default):
     i = None
