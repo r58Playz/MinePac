@@ -96,7 +96,6 @@ while True:
       break
 ```
 
-
 #### Simulated Annealing
 The simulated annealing algorithm is similar to the hill-climbing algorithm, however, it does not always choose the highest-scoring neighbor. Instead, there is a possibility that the algorithm will deliberately choose a suboptimal neighbor. The probability that the algorithm will choose a suboptimal neighbor decreases over time, as the algorithm gets closer and closer to an optimal heuristic string. The purpose of this probabilistic behavior is to maximize the space that the hill-climbing algorithm explores. Rather than sticking with whatever seems locally optimal, the hill-climbing algorithm may find even better strings in areas of the search space that, at first glance, seemed sub-optimal.
 
@@ -151,7 +150,7 @@ The logging level helps filter out scores that provide less insight into the alg
 
 Showing only those results logged at level 0, we can clearly see that the algorithms quickly converge to optimal results, without noise:
 
-<img src="media/log0_comparison.png" alt="Log 0 comparison" style="height: 325px;" />
+<img src="media/log0_comparison.png" alt="Log 0 comparison" style="height: 325px; width: 250px;" />
 <div style="margin-left: auto; margin-right: auto; style: text-align: center;">
     <strong>Legend</strong>
     <ul style="text-align: left;">
@@ -162,7 +161,23 @@ Showing only those results logged at level 0, we can clearly see that the algori
     </ul>
 </div>
 
-Note that this graph should not be taken as a literal plot of scores over time. Each algorithm chooses to log at level 0 at different times. For example, the steep hill-climbing algorithm will log at level 0 much more frequently than the greedy hill-climbing algorithm, because the steep hill-climbing algorithm logs at level 0 only after
+Note that this graph should not be taken as a literal plot of scores over time. Each algorithm chooses to log at level 0 at different times. For example, the steep hill-climbing algorithm will log at level 0 much more frequently than the greedy hill-climbing algorithm, because the steep hill-climbing algorithm logs at level 0 only after exploring every adjacent string, whereas the greedy hill-climbing algorithm will log at level 0 every time it comes across a string with better performance. Therefore, while it looks as though the greedy hill-climbing algorithm takes longer to converge in the above graph, when we stop filtering by log level, we can see that they take around the same time to converge:
+
+<img src="media/log1_comparison.png" alt="Log 1 comparison" style="height: 325px;" />
+
+Even though these algorithms converge to similar scores, that does not mean that their performance is identical. It just means that the devil is in the details. Our brute force algorithm, which iterates over all possible strings, shows that even though an algorithm can achieve reasonable performance in our more complex environment with simple strings, for it to achieve the best possible performance, the algorithms must produce longer and more complex strings of heuristics:
+
+<img src="media/log0_brute.png" alt="Brute Force" style="height: 325px;" />
+
+Our quantitative analysis demonstrates that our algorithms quickly and successfully finds good paths through the environments. However, because even simple heuristic strings result in reasonable performance, quantitative analysis does little to help illuminate the differences between each algorithm. For that, we turn to a more qualitative analysis. This analysis involves an examination of the actual heuristic strings that each algorithm produces. For example, in our simpler environment, it is easy to see how a sequence in which the agent moves towards the nearest diamond three times, then away from the enemy once or twice, then towards the next diamond until it captures it, would produce the best score. The genetic and hill-climbing algorithms each produce such a path:
+
+<img src="media/optimal_path_pretty.png" alt="Optimal Path" style="height: 325px;" />
+
+However, in our more complex environment, the steep hill-climbing algorithm produces strings that differ noticeably from those produced by other algorithms. Whereas every other algorithm produces strings that, although predominantly comprised of heuristics telling the agent to move towards the nearest item, contain a mix of heuristics, the steep hill-climbing algorithm gets stuck at the first local optimum it encounters. In particular, the steep hill-climbing algorithm has a tendency to perseverate on a string of a single heuristic, constantly telling the agent to move towards the nearest item. This prevents the steep hill-climbing algorithm from attaining an optimal score.
+
+Although the greedy hill-climbing and simulated annealing algorithms constitute only small modifications to the steep hill-climbing algorithm, they largely solve this problem. Because the greedy hill-climbing algorithm is more willing to explore areas that may not be local optima, it tends to find longer and more complex strings. And because simulated annealing can randomly choose suboptimal strings, it is also able to avoid getting stuck at local optima. Indeed, the ability to avoid fixating on the nearest local optimum is the primary purpose of a simulated annealing algorithm.
+
+
 
 ## References
 * **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
