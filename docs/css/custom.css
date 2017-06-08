@@ -84,7 +84,7 @@ code .k
     font-weight: bold;
 }
 
-code .mp, code .bp
+code .mi, code.mf, code .bp
 {
-    color: #FFC300;
+    color: #FF5733;
 }
