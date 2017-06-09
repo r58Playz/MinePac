@@ -11,15 +11,16 @@ This project teaches an agent to navigate a contained but hostile environment. T
 
 _A priori_, there is no obvious best path through the maze. Local search algorithms provide a means of finding an optimal path in far less time than it would take to iterate through all possibilities by brute force. Indeed, the search algorithms we have employed are able to converge on good strategies relatively quickly, though the means by which they discover that strategy vary.
 
-The primary goal of this project is to gather data with which we can compare different local search algorithms. To that end, we have tested several local search algorithms in two environments of different complexity. In particular, we have tested a genetic algorithm, a steep hill-climbing algorithm, a greedy hill-climbing algorithm, and a simulated annealing algorithm within these environments against the baseline performance of a brute force algorithm. The results of our tests are presented below.
+The primary goal of this project is to gather data with which we can compare different local search algorithms. To that end, we have tested several local search algorithms in three environments of different complexities. In particular, we have tested a genetic algorithm, a steep hill-climbing algorithm, a greedy hill-climbing algorithm, and a simulated annealing algorithm within these environments against the baseline performance of a brute force algorithm. The results of our tests are presented below.
 
-<table class="comparison">
+<table class="comparison" style="max-width: 1024px;">
     <tr>
         <td><img src="media/maze1.png" alt="Maze 1" style="height: 325px;" /></td>
+        <td><img src="media/maze2.png" alt="Maze 2" style="height: 325px;" /></td>
         <td><img src="media/rooms_maze.png" alt="Rooms" style="height: 325px;" /></td>
     </tr>
     <tr>
-        <td colspan="2">
+        <td colspan="3">
             <br />
             <em>Mazes in which the agent was trained.</em>
         </td>
@@ -165,13 +166,35 @@ Note that this graph should not be taken as a literal plot of scores over time. 
 
 <img src="media/log1_comparison.png" alt="Log 1 comparison" style="height: 325px;" />
 
-Even though these algorithms converge to similar scores, that does not mean that their performance is identical. It just means that the devil is in the details. Our brute force algorithm, which iterates over all possible strings, shows that even though an algorithm can achieve reasonable performance in our more complex environment with simple strings, for it to achieve the best possible performance, the algorithms must produce longer and more complex strings of heuristics.
+Even though these algorithms converge to similar scores, that does not mean that their performance is identical. It just means that the devil is in the details. A simpler environment better illustrates the differences in performance between each algorithm. The graph below shows the time that each algorithm takes to converge to an optimal result in our simplest maze. Here, time to convergence is measured as the number of missions before the algorithm generates three optimal scores:
 
-The graph below shows the highest scoring string of each length, as discovered by the brute force algorithm. Each bar corresponds to a given string length, and the height of the bar shows the score of the highest-scoring string of that length:
+<table class="comprison" style="max-width: 768px;">
+    <tr>
+        <td><img src="media/maze2.png" alt="Maze 2" style="height: 325px;" /></td>
+        <td><img src="media/ttc_comparison.png" alt="Time to Converge" style="height: 325px;" /></td>
+    </tr>
+    <tr>
+        <td>
+            <em>Map of the simpler environment.</em>
+        </td>
+        <td style="text-align: center;">
+            <strong>Legend</strong>
+            <ul style="text-align: left;">
+                <li style="color: #F00;">Genetic Algorithm</li>
+                <li style="color: #0C0;">Greedy Hill-Climbing Algorithm</li>
+                <li style="color: #00F;">Steep Hill-Climbing Algorithm</li>
+                <li style="color: #000;">Simulated Annealing</li>
+                <li style="color: #C0C;">Brute Force</li>
+            </ul>
+        </td>
+    </tr>
+</table>
 
-<img src="media/log0_brute.png" alt="Brute Force" style="height: 325px;" />
+In this comparison, a genetic algorithm converges onto an optimal result in the least amount of time. This is not too surprising, as genetic algorithms excel in noisy environments relative to other local search algorithms, and our environments were incredibly noisy. Both the agent and Zombies would, on occasion, randomly fall into lava as their movement commands became out of sync with their observations; the Zombie would sometimes see the agent coming and sometimes ignore him until the last minute; and on certain occasions, the Zombie might fail to appear at all. Though deterministic local search algorithms may find this kind of randomness disruptive, the genetic algorithm handled it without issue.
 
-Our quantitative analysis demonstrates that our algorithms quickly and successfully find good paths through the environments. However, because even simple heuristic strings result in reasonable performance, quantitative analysis does little to help illuminate the differences between each algorithm. For that, we turn to a more qualitative analysis. This analysis involves an examination of the actual heuristic strings that each algorithm produces. For example, in our simpler environment, it is easy to see how a sequence in which the agent moves towards the nearest diamond three times, then away from the enemy once or twice, then towards the next diamond until it captures it, would produce the best score:
+The greedy hill-climbing algorithm was the next fastest algorithm. It was able to spend less time exploring suboptimal heuristic strings before deciding to keep moving forward, and because this environment was simple enough that a greedy approach did not lead the algorithm down a bad path, it was able to converge more quickly that the steep hill-climbing algorithm. The steep hill-climbing and simulated annealing algorithms, however, took similar times to converge. This is likely because the environment was sufficiently noisy that random perturbations in score functioned to move the hill-climbing algorithm away from local optima in the same way that simulated annealing is designed to do. Finally, all algorithms performed better than the brute force algorithm, which had to exhaustively search through hundreds of heuristic strings before finding optimal ones.
+
+Our quantitative analysis demonstrates that our algorithms quickly and successfully find good paths through the environments, and further quantifies the differences in performance between each algorithm. However, to examine these differences in more detail, we turn to a qualitative analysis. This analysis involves an examination of the actual heuristic strings that each algorithm produces. For example, in a simple environment, it is easy to see how a sequence in which the agent moves towards the nearest diamond three times, then away from the enemy once or twice, then towards the next diamond until it captures it, would produce the best score:
 
 <img src="media/optimal_path_pretty.png" alt="Optimal Path" style="height: 325px;" />
 
@@ -181,7 +204,7 @@ While all algorithms achieve similar results in our simpler environment, in our 
 
 Although the greedy hill-climbing and simulated annealing algorithms constitute only small modifications to the steep hill-climbing algorithm, they largely solve this problem. Because the greedy hill-climbing algorithm is more willing to explore areas that may not be local optima, it tends to find longer and more complex strings. And because simulated annealing can randomly choose suboptimal strings, it is also able to avoid getting stuck at local optima. Indeed, the ability to avoid fixating on the nearest local optimum is the primary purpose of a simulated annealing algorithm.
 
-Our environments demonstrate that the local search algorithms we have tested are able to quickly and successfully find high-scoring paths through the maze. Our quantitative analysis demonstrates the effectiveness of these algorithms, and our qualitative analysis provides insight into the relative strengths and weaknesses of each algorithm.
+Our environments demonstrate that the local search algorithms we have tested are able to quickly and successfully find high-scoring paths through the maze. Our quantitative analysis demonstrates the relative effectiveness of each of these algorithms, and our qualitative analysis provides insight into the reasons behind these differences.
 
 ## References
 * **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
