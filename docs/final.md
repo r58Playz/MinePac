@@ -168,7 +168,7 @@ Note that this graph should not be taken as a literal plot of scores over time. 
 
 Even though these algorithms converge to similar scores, that does not mean that their performance is identical. It just means that the devil is in the details. A simpler environment better illustrates the differences in performance between each algorithm. The graph below shows the time that each algorithm takes to converge to an optimal result in our simplest maze. Here, time to convergence is measured as the number of missions before the algorithm generates three optimal scores:
 
-<table class="comprison" style="max-width: 768px;">
+<table class="comparison" style="max-width: 768px;">
     <tr>
         <td><img src="media/maze2.png" alt="Maze 2" style="height: 325px;" /></td>
         <td><img src="media/ttc_comparison.png" alt="Time to Converge" style="height: 325px;" /></td>
