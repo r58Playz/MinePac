@@ -178,6 +178,7 @@ Even though these algorithms converge to similar scores, that does not mean that
             <em>Map of the simpler environment.</em>
         </td>
         <td style="text-align: center;">
+            <br />
             <strong>Legend</strong>
             <ul style="text-align: left;">
                 <li style="color: #F00;">Genetic Algorithm</li>
