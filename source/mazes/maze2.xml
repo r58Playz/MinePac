@@ -2,7 +2,7 @@
 <Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<About>
-		<Summary>Hello world!</Summary>
+		<Summary>Simple Maze</Summary>
 	</About>
 
 	<ServerSection>
@@ -16,12 +16,21 @@
 		<ServerHandlers>
 			<FlatWorldGenerator generatorString="3;7,44*49,73,35:1,159:4,95:13,35:13,159:11,95:10,159:14,159:6,35:6,95:6;35;village"/>
 			<DrawingDecorator>
-				<DrawCuboid x1="0" x2="20" y1="55" y2="55" z1="-10" z2="10" type="glowstone" />
-				<DrawCuboid x1="1" x2="9" y1="55" y2="55" z1="-9" z2="-1" type="air" />
-				<DrawCuboid x1="1" x2="9" y1="55" y2="55" z1="1" z2="9" type="air" />
-				<DrawCuboid x1="11" x2="19" y1="55" y2="55" z1="1" z2="9" type="air" />
-				<DrawCuboid x1="11" x2="19" y1="55" y2="55" z1="-9" z2="-1" type="air" />
-				<DrawCuboid x1="0" x2="20" y1="54" y2="54" z1="-10" z2="10" type="lava" />
+				<DrawCuboid x1="0" x2="20" y1="55" y2="55" z1="-10" z2="11" type="glowstone" />
+				<DrawCuboid x1="1" x2="4" y1="55" y2="55" z1="-9" z2="0" type="air" />
+				<DrawCuboid x1="1" x2="4" y1="55" y2="55" z1="2" z2="10" type="air" />
+				<DrawCuboid x1="6" x2="14" y1="55" y2="55" z1="-4" z2="5" type="air" />
+				<DrawCuboid x1="4" x2="9" y1="55" y2="55" z1="-6" z2="-9" type="air" />
+				<DrawCuboid x1="4" x2="9" y1="55" y2="55" z1="7" z2="10" type="air" />
+				<DrawCuboid x1="11" x2="19" y1="55" y2="55" z1="-6" z2="-9" type="air" />
+				<DrawCuboid x1="11" x2="19" y1="55" y2="55" z1="7" z2="10" type="air" />
+				<DrawCuboid x1="16" x2="19" y1="55" y2="55" z1="-9" z2="0" type="air" />
+				<DrawCuboid x1="16" x2="19" y1="55" y2="55" z1="2" z2="10" type="air" />
+				<DrawCuboid x1="0" x2="20" y1="54" y2="54" z1="-10" z2="11" type="lava" />
+				<!-- Entities -->
+				<DrawItem x="5" y="56" z="-4" type="diamond" />
+				<DrawItem x="15" y="56" z="6" type="diamond" />
+				<DrawEntity x="15" y="56" z="-4" type="Zombie" />
 			</DrawingDecorator>
 			<ServerQuitFromTimeUp timeLimitMs="30000"/>
 			<ServerQuitWhenAnyAgentFinishes/>
