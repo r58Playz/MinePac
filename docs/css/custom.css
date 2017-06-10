@@ -7,7 +7,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background: linear-gradient(#CDF, #F5F5F5 768px);
+  background-image: url("http://minecraft.org.pl/images/shaderpacks/seus-2.jpg")/*linear-gradient(#CDF, #F5F5F5 768px)*/;
 }
 .footer {
   position: absolute;
