@@ -11,7 +11,7 @@ Essentially, this program teaches an agent to play Pacman.
 <img src="media/pacman_comparison.png" alt="Pacman Comparison" style="height: 325px;" />
 
 
-The agent will be taught using various different local search algorithms, and we will then compare the performance of each algorithm. So far, the agent can learn to navigate its environment using either a [genetic algorithm](https://en.wikipedia.org/wiki/Genetic_algorithm) or a [hillclimbing algorithm](https://en.wikipedia.org/wiki/Hill_climbing). You can see a video of the program in action below.
+The agent is taught using various different local search algorithms; we then compare the performance of each algorithm. So far, the agent can learn to navigate its environment using a genetic algorithm, a steep hill-climbing algorithm, a greedy hill-climbing algorithm, simulated annealing, or brute force. You can see a video of the program in action below.
 
 ### Graphical Overview
 <img src="media/architectural_map.png" alt="Graphical Overview" style="height: 500px;" />
@@ -24,5 +24,5 @@ The agent will be taught using various different local search algorithms, and we
 
 ### Video
 <div id="video_frame">
-  <iframe src="https://www.youtube.com/embed/OEJmt3fIFSU" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/sS253RfbM3s" frameborder="0" allowfullscreen></iframe>
 </div>

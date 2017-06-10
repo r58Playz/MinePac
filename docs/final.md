@@ -4,7 +4,9 @@ title: Final Report
 ---
 
 ## Video
-Coming Soon!
+<div id="video_frame">
+  <iframe src="https://www.youtube.com/embed/sS253RfbM3s" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Project Summary
 This project teaches an agent to navigate a contained but hostile environment. The agent must navigate a maze of glowstone blocks, collecting diamonds scattered around the maze, and avoiding zombies. Essentially, the agent learns to play PacMan. The more diamonds the agent gets, and the longer it survives, the higher its score. The agent learns to maximize its score using a number of different local search algorithms. We then compare the performance of each algorithm, to illuminate the strengths and weaknesses of each.
