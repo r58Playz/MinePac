@@ -7,7 +7,15 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background-image: url("https://i.ytimg.com/vi/7v3wX9wqu80/maxresdefault.jpg")/*linear-gradient(#CDF, #F5F5F5 768px)*/;
+  background-image: url("https://i.ytimg.com/vi/7v3wX9wqu80/maxresdefault.jpg", 
+    "http://www.minecraft-installer.de/Dateien/BilderHQ/SEUS%20Shader.jpg",
+    "http://minecraft.org.pl/images/shaderpacks/seus-2.jpg")/*linear-gradient(#CDF, #F5F5F5 768px)*/;
+  
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 .footer {
   position: absolute;
