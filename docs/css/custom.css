@@ -15,7 +15,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #aaaaaa;
+  background-color: linear-gradient(#aaaaaa, #F5F5F5 768px);
 }
 
 
