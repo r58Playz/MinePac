@@ -6,7 +6,7 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  position: relative;
+  position: absolute;
   margin-bottom: 60px;
   background-image: url("https://i.ytimg.com/vi/7v3wX9wqu80/maxresdefault.jpg", 
     "http://www.minecraft-installer.de/Dateien/BilderHQ/SEUS%20Shader.jpg",
