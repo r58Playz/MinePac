@@ -31,7 +31,7 @@ body {
 body > .container {
   padding: 60px 15px 0;
   text-align: justify;
-  background: #FFF;
+  background: rgba(255, 255, 255, 0.9); /* #FFF */
   /*opacity: 0.9;*/
   border: 1px solid #F5F5F5;
 }
