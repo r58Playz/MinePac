@@ -31,8 +31,7 @@ body {
 body > .container {
   padding: 60px 15px 0;
   text-align: justify;
-  background: rgba(255, 255, 255, 0.9); /* #FFF */
-  /*opacity: 0.9;*/
+  background: rgba(255, 255, 255, 0.93); /* #FFF */
   border: 1px solid #F5F5F5;
 }
 .container .text-muted {
