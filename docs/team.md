@@ -3,7 +3,7 @@ layout: default
 title:  Team
 ---
 
-# Team Members
+## Team Members
 
 
 ### Anthony Liu
