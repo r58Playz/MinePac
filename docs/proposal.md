@@ -2,7 +2,7 @@
 layout:	default
 title:	Proposal
 ---
-<img src="media/Minecraft_PacMan.png" alt="MinePac Logo" style="height: 500px;" />
+<img src="media/Minecraft_PacMan.png" alt="MinePac Logo" style="height: 400px;" />
 
 ## Summary
 
