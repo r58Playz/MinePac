@@ -6,11 +6,11 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  /* margin-bottom: 60px;*/
+  margin-bottom: 60px;
   background-attachment: fixed;
   background-position: center bottom;
   background-repeat: no-repeat;
-  background-image: url("../media/minecraft_bg2.jpg"), linear-gradient(#7a8cb4, #19231B 1080px);
+  background-image: url("../media/minecraft_bg2.jpg"), linear-gradient(#4a5c94, #19231B 1080px);
   background-size: 100%;
   /*linear-gradient(#CDF, #F5F5F5 768px)*/
 }
@@ -21,6 +21,7 @@ body {
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: #808080;
+  opacity: 0.5;
 }
 
 
