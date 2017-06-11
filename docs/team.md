@@ -6,11 +6,14 @@ title:  Team
 # {{ page.title }}
 
 
-## ArthLeu
+### ArthLeu
+
 Anthony Liu: haoyanl2
 
-## AvielMenter
+### AvielMenter
+
 Aviel Menter: amenter
 
-## KvnLXu
+### KvnLXu
+
 Kevin Xu: klxu 
