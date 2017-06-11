@@ -1,4 +1,4 @@
-/* Sticky footer styles
+/*/* Sticky footer styles
 -------------------------------------------------- */
 html {
   position: relative;
@@ -20,7 +20,8 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #000110;
+  /*background-color: #000110;*/
+  background-image: linear-gradient(#202020, #000110 1080px)
 }
 
 
