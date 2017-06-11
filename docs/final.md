@@ -2,8 +2,6 @@
 layout: default
 title: Final Report
 ---
-<img src="media/Minecraft_PacMan_r.png" alt="MinePac Logo" style="height: 325px;" />
-
 ### Video
 <div id="video_frame">
   <iframe src="https://www.youtube.com/embed/sS253RfbM3s" frameborder="0" allowfullscreen></iframe>
