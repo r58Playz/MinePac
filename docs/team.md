@@ -8,12 +8,17 @@ title:  Team
 
 ### Anthony Liu
 
-ArthLeu | haoyanl2
+haoyanl2
+GitHub: ArthLeu
+
 
 ### Aviel Menter
 
-AvielMenter | amenter
+amenter
+GitHub: AvielMenter
+
 
 ### Kevin Xu
 
-KvnLXu | klxu 
+klxu 
+GitHub: KvnLXu
