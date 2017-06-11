@@ -20,7 +20,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: rgba(18,18,18,0.8);
+  background-color: rgba(18,18,18,0.85);
 }
 
 
@@ -31,7 +31,7 @@ body {
 body > .container {
   padding: 60px 15px 0;
   text-align: justify;
-  background: rgba(255, 255, 255, 0.945); /* #FFF */
+  background: rgba(255, 255, 255, 0.95); /* #FFF */
   border: 1px solid #F5F5F5;
 }
 .container .text-muted {
@@ -95,7 +95,7 @@ code .c
 
 code .k
 {
-    color: #00D;
+    color: #00C;
     font-weight: bold;
 }
 
