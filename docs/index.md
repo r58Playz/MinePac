@@ -2,7 +2,7 @@
 layout: default
 title:  Home
 ---
-<img src="media/Minecraft_PacMan.png" alt="Logo" style="height: 200px;" />
+![MinePac Logo](media/Minecraft_PacMan.png)
 
 This program teaches a Minecraft agent to explore and survive in a contained but hostile environment. The environment is maze-like, containing multiple passages leading in all directions. The agent learns to move through the environment, collecting diamonds, but avoiding enemy Zombies that can knock the agent off into the lava.
 
