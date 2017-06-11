@@ -2,9 +2,9 @@
 layout: default
 title:  Team
 ---
+<img src="media/Minecraft_PacMan_y.png" alt="MinePac Logo" style="height: 325px;" />
 
 ## Team Members
-
 
 ### Anthony Liu
 
