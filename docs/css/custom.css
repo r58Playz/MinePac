@@ -20,7 +20,9 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-color: #6a6a8a;
+  background-color: #707070;
+  opacity: 0.5;
+  filter: alpha(opacity=50); 
 }
 
 
