@@ -6,14 +6,14 @@ title:  Team
 # Team Members
 
 
-### ArthLeu
+### Anthony Liu
 
-Anthony Liu: haoyanl2
+ArthLeu | haoyanl2
 
-### AvielMenter
+### Aviel Menter
 
-Aviel Menter: amenter
+AvielMenter | amenter
 
-### KvnLXu
+### Kevin Xu
 
-Kevin Xu: klxu 
+KvnLXu | klxu 
