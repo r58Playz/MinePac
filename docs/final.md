@@ -3,7 +3,7 @@ layout: default
 title: Final Report
 ---
 ## Final Report
-_  Modified June 06, 2017_
+_Modified June 06, 2017_
 
 ### Video
 <div id="video_frame">
