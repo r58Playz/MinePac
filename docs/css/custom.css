@@ -7,7 +7,10 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  background-image: url("https://i.ytimg.com/vi/7v3wX9wqu80/maxresdefault.jpg");
+  background-attachment: fixed;
+  background-position: center top;
+  background-image: url("https://i.ytimg.com/vi/7v3wX9wqu80/maxresdefault.jpg"), linear-gradient(##4a5c84, #19231B 1080px);
+  background-size: 100%;
   /*linear-gradient(#CDF, #F5F5F5 768px)*/
 }
 .footer {
