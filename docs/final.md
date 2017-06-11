@@ -3,12 +3,12 @@ layout: default
 title: Final Report
 ---
 
-## Video
+### Video
 <div id="video_frame">
   <iframe src="https://www.youtube.com/embed/sS253RfbM3s" frameborder="0" allowfullscreen></iframe>
 </div>
 
-## Project Summary
+### Project Summary
 This project teaches an agent to navigate a contained but hostile environment. The agent must navigate a maze of glowstone blocks, collecting diamonds scattered around the maze, and avoiding zombies. Essentially, the agent learns to play PacMan. The more diamonds the agent gets, and the longer it survives, the higher its score. The agent learns to maximize its score using a number of different local search algorithms. We then compare the performance of each algorithm, to illuminate the strengths and weaknesses of each.
 
 _A priori_, there is no obvious best path through the maze. Local search algorithms provide a means of finding an optimal path in far less time than it would take to iterate through all possibilities by brute force. Indeed, the search algorithms we have employed are able to converge on good strategies relatively quickly, though the means by which they discover that strategy vary.
@@ -29,7 +29,7 @@ The primary goal of this project is to gather data with which we can compare dif
     </tr>
 </table>
 
-## Approach
+### Approach
 Each algorithm relies on the same set of heuristics functions to navigate the environment. These heuristic functions take as input the agent's observations, and output a move that the agent will take. The agent's observations include the following information:
 
 * `grid`: a 3x3 grid of blocks centered at the block below the agent's feet
@@ -140,7 +140,7 @@ while True:
   i += 1
 ```
 
-## Evaluation
+### Evaluation
 As the goal of this project is to provide comparative data about different local search algorithms, this project should be evaluated on the basis of the quality of data it provides. Since our status report, we substantially improved the level of detail in the data that we gather from the project. This has unlocked new methods by which we can quantitatively analyze and compare the performance of the various algorithms.
 
 Previously, our program logged the score that the agent received at the end of every mission. Now, the logging format is more complex. After each mission, the algorithm can decide to log one or more scores. The algorithm also logs the heuristic string associated with each score, as well as an integer logging level. The lower the logging level, the more important the score.
@@ -209,7 +209,7 @@ Although the greedy hill-climbing and simulated annealing algorithms constitute 
 
 Our environments demonstrate that the local search algorithms we have tested are able to quickly and successfully find high-scoring paths through the maze. Our quantitative analysis demonstrates the relative effectiveness of each of these algorithms, and our qualitative analysis provides insight into the reasons behind these differences.
 
-## References
+### References
 * **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
 * **N-Queens Part 1: Steepest Hill Climbing:** <http://letstalkdata.com/2013/12/n-queens-part-1-steepest-hill-climbing/>
 
