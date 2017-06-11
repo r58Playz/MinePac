@@ -220,4 +220,4 @@ Our environments demonstrate that the local search algorithms we have tested are
 * <img src="media/Steve.png" class="icon" /> **Steve.png:** [FPSXGames](http://www.fps-x-games.com/2013/06/free-minecraft-steve-head-printable-mask.html)
 
 ***
-<img src="media/Minecraft_PacMan_r.png" alt="MinePac Logo" style="height: 60px;" />
+<img src="media/Minecraft_PacMan_r.png" alt="MinePac Logo" style="height: 80px;" />
