@@ -211,13 +211,14 @@ Although the greedy hill-climbing and simulated annealing algorithms constitute 
 Above all, our environments demonstrate that the local search algorithms we have tested are able to quickly and successfully find high-scoring paths through the maze. Furthermore, our quantitative analysis demonstrates the relative effectiveness of each of these algorithms, and our qualitative analysis provides insight into the reasons behind these differences.
 
 ## References
-* **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
 * **N-Queens Part 1: Steepest Hill Climbing:** <http://letstalkdata.com/2013/12/n-queens-part-1-steepest-hill-climbing/>
+* **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
 
 #### Image Credits
 * <img src="media/Diamond.png" class="icon" /> **Diamond.png:** [Gamepedia Minecraft Wiki](http://minecraft.gamepedia.com/File:Diamond.png)
-* <img src="media/Zombie.png" class="icon" /> **Zombie.png:** [Pinterest](https://s-media-cache-ak0.pinimg.com/originals/ac/65/8a/ac658a2c0bc1117c6d547170b23dec72.jpg)
 * <img src="media/Steve.png" class="icon" /> **Steve.png:** [FPSXGames](http://www.fps-x-games.com/2013/06/free-minecraft-steve-head-printable-mask.html)
+* <img src="media/Zombie.png" class="icon" /> **Zombie.png:** [Pinterest](https://s-media-cache-ak0.pinimg.com/originals/ac/65/8a/ac658a2c0bc1117c6d547170b23dec72.jpg)
+* **Site Background:** [Minecraft-Drift Through Rain](https://www.youtube.com/watch?v=Rkydse1LVX0)
 * **Pacman Map:** [Today I Found Out](http://www.todayifoundout.com/index.php/2013/08/the-history-of-pac-man/)
 
 ***
