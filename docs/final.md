@@ -2,15 +2,14 @@
 layout: default
 title: Final Report
 ---
-## Final Report
-_Last Modified June 11, 2017_
+<h1 style="text-align: center; font-weight: bold;">Final Report</h1>
 
-### Video
+## Video
 <div id="video_frame">
   <iframe src="https://www.youtube.com/embed/sS253RfbM3s" frameborder="0" allowfullscreen></iframe>
 </div>
 
-### Project Summary
+## Project Summary
 This project teaches an agent to navigate a contained but hostile environment. The agent must navigate a maze of glowstone blocks, collecting diamonds scattered around the maze, and avoiding zombies. Essentially, the agent learns to play PacMan. The more diamonds the agent gets, and the longer it survives, the higher its score. The agent learns to maximize its score using a number of different local search algorithms. We then compare the performance of each algorithm, to illuminate the strengths and weaknesses of each.
 
 _A priori_, there is no obvious best path through the maze. Local search algorithms provide a means of finding an optimal path in far less time than it would take to iterate through all possibilities by brute force. Indeed, the search algorithms we have employed are able to converge on good strategies relatively quickly, though the means by which they discover that strategy vary.
@@ -31,7 +30,7 @@ The primary goal of this project is to gather data with which we can compare dif
     </tr>
 </table>
 
-### Approach
+## Approach
 Each algorithm relies on the same set of heuristics functions to navigate the environment. These heuristic functions take as input the agent's observations, and output a move that the agent will take. The agent's observations include the following information:
 
 * `grid`: a 3x3 grid of blocks centered at the block below the agent's feet
@@ -142,7 +141,7 @@ while True:
   i += 1
 ```
 
-### Evaluation
+## Evaluation
 As the goal of this project is to provide comparative data about different local search algorithms, this project should be evaluated on the basis of the quality of data it provides. Since our status report, we substantially improved the level of detail in the data that we gather from the project. This has unlocked new methods by which we can quantitatively analyze and compare the performance of the various algorithms.
 
 Previously, our program logged the score that the agent received at the end of every mission. Now, the logging format is more complex. After each mission, the algorithm can decide to log one or more scores. The algorithm also logs the heuristic string associated with each score, as well as an integer logging level. The lower the logging level, the more important the score.
@@ -211,7 +210,7 @@ Although the greedy hill-climbing and simulated annealing algorithms constitute 
 
 Above all, our environments demonstrate that the local search algorithms we have tested are able to quickly and successfully find high-scoring paths through the maze. Furthermore, our quantitative analysis demonstrates the relative effectiveness of each of these algorithms, and our qualitative analysis provides insight into the reasons behind these differences.
 
-### References
+## References
 * **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
 * **N-Queens Part 1: Steepest Hill Climbing:** <http://letstalkdata.com/2013/12/n-queens-part-1-steepest-hill-climbing/>
 
@@ -219,6 +218,7 @@ Above all, our environments demonstrate that the local search algorithms we have
 * <img src="media/Diamond.png" class="icon" /> **Diamond.png:** [Gamepedia Minecraft Wiki](http://minecraft.gamepedia.com/File:Diamond.png)
 * <img src="media/Zombie.png" class="icon" /> **Zombie.png:** [Pinterest](https://s-media-cache-ak0.pinimg.com/originals/ac/65/8a/ac658a2c0bc1117c6d547170b23dec72.jpg)
 * <img src="media/Steve.png" class="icon" /> **Steve.png:** [FPSXGames](http://www.fps-x-games.com/2013/06/free-minecraft-steve-head-printable-mask.html)
+* **Pacman Map:** [Today I Found Out](http://www.todayifoundout.com/index.php/2013/08/the-history-of-pac-man/)
 
 ***
 <img src="media/Minecraft_PacMan_r.png" alt="MinePac Logo" style="height: 80px;" />
