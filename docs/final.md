@@ -218,8 +218,8 @@ Above all, our environments demonstrate that the local search algorithms we have
 * <img src="media/Diamond.png" class="icon" /> **Diamond.png:** [Gamepedia Minecraft Wiki](http://minecraft.gamepedia.com/File:Diamond.png)
 * <img src="media/Steve.png" class="icon" /> **Steve.png:** [FPSXGames](http://www.fps-x-games.com/2013/06/free-minecraft-steve-head-printable-mask.html)
 * <img src="media/Zombie.png" class="icon" /> **Zombie.png:** [Pinterest](https://s-media-cache-ak0.pinimg.com/originals/ac/65/8a/ac658a2c0bc1117c6d547170b23dec72.jpg)
-* **Site Background:** [Minecraft - Drift Through Rain](https://www.youtube.com/watch?v=Rkydse1LVX0)
 * **Pacman Map:** [Today I Found Out](http://www.todayifoundout.com/index.php/2013/08/the-history-of-pac-man/)
+* **Site Background:** [Minecraft - Drift Through Rain](https://www.youtube.com/watch?v=Rkydse1LVX0)
 
 ***
 <img src="media/Minecraft_PacMan_r.png" alt="MinePac Logo" style="height: 80px;" />
