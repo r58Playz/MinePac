@@ -19,10 +19,10 @@ The agent is taught using various different local search algorithms; we then com
 <img src="media/architectural_map.png" alt="Graphical Overview" style="height: 500px;" />
 
 ### Useful Links
-* **Repository:** <https://github.com/avielmenter/MinePac>
-* **Malmo Platform:** <https://github.com/Microsoft/malmo>
-* **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
+* **GitHub Repository:** <https://github.com/avielmenter/MinePac>
+* **Minecraft Malmo Platform:** <https://github.com/Microsoft/malmo>
 * **N-Queens Part 1: Steepest Hill Climbing:** <http://letstalkdata.com/2013/12/n-queens-part-1-steepest-hill-climbing/>
+* **Wikipedia on Genetic Algorithms:** <https://en.wikipedia.org/wiki/Genetic_algorithm>
 
 ### Video
 <div id="video_frame">
